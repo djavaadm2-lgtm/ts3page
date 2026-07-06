@@ -1,4 +1,4 @@
-/* Mobile friendly Tech Community Style dengan navigasi vertikal */
+/* Mobile friendly Tech Community Style dengan navigasi vertikal + animasi */
 html {
   scroll-behavior: smooth;
 }
@@ -74,8 +74,7 @@ header h1 {
 .sidebar a span {
   position: absolute;
   left: 70px;
-  background: rgba(0,0,0,0.8);
-  color: #fff;
+  background: rgba(0,0,0,0.8;
   padding: 5px 10px;
   border-radius: 4px;
   opacity: 0;
@@ -101,12 +100,26 @@ header h1 {
   text-align: center;
   font-size: 1.2em;
   box-shadow: 0 0 8px #00d4ff;
-  transition: background 0.3s, color 0.3s;
+  transition: transform 0.3s, background 0.3s, color 0.3s;
+  transform: translateX(100px); /* posisi awal tersembunyi */
+  opacity: 0;
 }
+
+/* Animasi slide-in */
+@keyframes slideIn {
+  from { transform: translateX(100px); opacity: 0; }
+  to { transform: translateX(0); opacity: 1; }
+}
+
+.floating-menu a:nth-child(1) { animation: slideIn 0.4s forwards; animation-delay: 0.1s; }
+.floating-menu a:nth-child(2) { animation: slideIn 0.4s forwards; animation-delay: 0.2s; }
+.floating-menu a:nth-child(3) { animation: slideIn 0.4s forwards; animation-delay: 0.3s; }
+.floating-menu a:nth-child(4) { animation: slideIn 0.4s forwards; animation-delay: 0.4s; }
 
 .floating-menu a:hover {
   background: #00d4ff;
   color: #000;
+  transform: scale(1.1);
 }
 
 /* Section */
@@ -162,5 +175,3 @@ footer {
 @media (max-width: 768px) {
   .sidebar {
     display: none;
-  }
-  .floating-menu

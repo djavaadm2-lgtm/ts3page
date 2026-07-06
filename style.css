@@ -1,4 +1,4 @@
-/* Material Design Style */
+/* Material Design Style tanpa sidebar */
 html {
   scroll-behavior: smooth;
 }
@@ -16,7 +16,7 @@ header {
   top: 0;
   left: 0;
   width: 100%;
-  background: #2196f3; /* warna primer */
+  background: #2196f3;
   color: #fff;
   padding: 15px 0;
   text-align: center;
@@ -30,60 +30,14 @@ header h1 {
   font-weight: 500;
 }
 
-/* Sidebar Navigasi (desktop) */
-.sidebar {
-  position: fixed;
-  top: 70px;
-  left: 0;
-  width: 60px;
-  background: #1976d2;
-  height: 100%;
-  padding-top: 20px;
-  z-index: 999;
-}
-
-.sidebar ul {
-  list-style: none;
-  padding: 0;
-  margin: 0;
-}
-
-.sidebar li {
-  margin: 20px 0;
-}
-
-.sidebar a {
-  color: #fff;
-  text-decoration: none;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  position: relative;
-}
-
-.sidebar a i {
-  font-size: 1.5em;
-}
-
-.sidebar a span {
-  position: absolute;
-  left: 70px;
-  background: #2196f3;
-  color: #fff;
-  padding: 5px 10px;
-  border-radius: 4px;
-  opacity: 0;
-  white-space: nowrap;
-  transition: opacity 0.3s;
-}
-
-.sidebar a:hover span {
-  opacity: 1;
-}
-
-/* Floating vertical menu (mobile) */
+/* Floating vertical menu */
 .floating-menu {
-  display: none;
+  display: flex;
+  flex-direction: column;
+  position: fixed;
+  bottom: 15px;
+  right: 15px;
+  z-index: 1000;
 }
 
 .floating-menu a {
@@ -99,14 +53,14 @@ header h1 {
 }
 
 .floating-menu a:hover {
-  background: #ff9800; /* warna sekunder */
+  background: #ff9800;
   transform: scale(1.1);
 }
 
 /* Card Layout */
 .card {
   background: #fff;
-  margin: 100px 20px 30px 80px;
+  margin: 100px 20px 30px 20px; /* full width tanpa sidebar */
   padding: 20px;
   border-radius: 8px;
   box-shadow: 0 2px 8px rgba(0,0,0,0.1);
@@ -175,19 +129,3 @@ footer {
   padding: 15px;
   margin-top: 30px;
 }
-
-/* Responsif */
-@media (max-width: 768px) {
-  .sidebar {
-    display: none;
-  }
-  .floating-menu {
-    display: flex;
-    flex-direction: column;
-    position: fixed;
-    bottom: 15px;
-    right: 15px;
-    z-index: 1000;
-  }
-  .card {
-    margin:

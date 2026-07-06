@@ -1,35 +1,24 @@
-<!DOCTYPE html>
-<html lang="id">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Server Ngopi Indonesia</title>
-  <link rel="stylesheet" href="style.css">
-  <!-- Font Google & Font Awesome -->
-  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
-</head>
 <body>
   <!-- Header -->
   <header>
     <h1>Server Ngopi Indonesia</h1>
   </header>
-  
-<!-- Carousel Gambar -->
-<div class="carousel">
-  <div class="slides">
-    <img src="img/slide1.jpg" alt="Slide 1">
-    <img src="img/slide2.jpg" alt="Slide 2">
-    <img src="img/slide3.jpg" alt="Slide 3">
+
+  <!-- Carousel Gambar -->
+  <div class="carousel">
+    <div class="slides">
+      <img src="img/slide1.jpg" alt="Slide 1">
+      <img src="img/slide2.jpg" alt="Slide 2">
+      <img src="img/slide3.jpg" alt="Slide 3">
+    </div>
   </div>
-</div>
-  
-  <!-- Floating vertical menu (utama) -->
+
+  <!-- Floating vertical menu -->
   <nav class="floating-menu">
     <a href="#join" title="Join"><i class="fas fa-headset"></i></a>
     <a href="#alamat" title="Alamat"><i class="fas fa-server"></i></a>
     <a href="#channel" title="Channel"><i class="fas fa-comments"></i></a>
-    <a href="#pribadi" title="Pribadi"><i class="fas fa-cogs"></i></a>
+    <a href="#sewa" title="Sewa"><i class="fas fa-cogs"></i></a>
     <a href="#donasi" title="Donasi"><i class="fas fa-donate"></i></a>
   </nav>
 
@@ -53,12 +42,22 @@
     <a class="btn" href="http://wa.me/082177580386" target="_blank">WhatsApp Admin</a>
   </section>
 
-  <!-- Section Server Pribadi -->
-  <section id="pribadi" class="card">
-    <h2><i class="fas fa-cogs"></i> Server Teamspeak Pribadi</h2>
-    <p>Hubungi WA admin untuk informasi lebih lanjut atau bergabung dengan grup.</p>
-    <a class="btn" href="http://wa.me/082177580386" target="_blank">WhatsApp Admin</a>
-    <a class="btn" href="https://chat.whatsapp.com/HTBOC3uEc4YKNsVY87ORXH" target="_blank">WhatsApp Group</a>
+  <!-- Section Sewa Server -->
+  <section id="sewa" class="card">
+    <h2><i class="fas fa-cogs"></i> Sewa Server Teamspeak Pribadi/Publik</h2>
+    <div class="paket">
+      <h3>Paket 1 Bulan - Rp 25.000</h3>
+      <p>Slot 256, gratis subdomain <em>xxx.tsdns.my.id</em>, port random.</p>
+    </div>
+    <div class="paket">
+      <h3>Paket 1 Bulan - Rp 35.000</h3>
+      <p>Slot 512, gratis subdomain <em>xxx.tsdns.my.id</em>, port pilihan.</p>
+    </div>
+    <div class="paket">
+      <h3>Paket 3 Bulan - Rp 75.000</h3>
+      <p>Slot 512, gratis subdomain <em>xxx.tsdns.my.id</em>, port pilihan, custom aplikasi Teamspeak.</p>
+    </div>
+    <a class="btn" href="http://wa.me/082177580386" target="_blank">Hubungi Admin untuk Sewa</a>
   </section>
 
   <!-- Section Donasi -->
@@ -73,4 +72,3 @@
     <p>&copy; 2026 Server Ngopi Indonesia</p>
   </footer>
 </body>
-</html>

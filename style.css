@@ -1,168 +1,477 @@
-/* --- Pengaturan Dasar --- */
+/* ==========================================================================
+   1. RESET & VARIABLE DASAR
+   ========================================================================== */
+:root {
+    --bg-dark: #121214;
+    --bg-card: #1a1a1e;
+    --bg-card-alt: #222227;
+    --primary: #b37d4e;       /* Warna Kopi / Amber */
+    --primary-hover: #96643b;
+    --accent: #2ecc71;        /* Hijau Indikator Radio (Online) */
+    --text-main: #f5f5f7;
+    --text-muted: #a1a1a6;
+    --font-sans: 'Inter', sans-serif;
+    --font-heading: 'Space Grotesk', sans-serif;
+}
+
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    scroll-behavior: smooth;
 }
 
 body {
-    background-color: #0f111a; /* Tema gelap khas gaming */
-    color: #e2e8f0;
-    min-height: 100vh;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    padding: 20px;
-}
-
-/* --- Header --- */
-header {
-    text-align: center;
-    margin-bottom: 50px;
-    max-width: 600px;
-}
-
-header h1 {
-    font-size: 2.5rem;
-    color: #ffffff;
-    margin-bottom: 15px;
-    text-transform: uppercase;
-    letter-spacing: 1px;
-}
-
-header p {
-    color: #94a3b8;
-    font-size: 1.1rem;
+    background-color: var(--bg-dark);
+    color: var(--text-main);
+    font-family: var(--font-sans);
     line-height: 1.6;
+    overflow-x: hidden;
 }
 
-/* --- Grid Container --- */
-.pricing-container {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    gap: 30px;
+.container {
+    width: 90%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 15px;
+}
+
+/* ==========================================================================
+   2. NAVBAR
+   ========================================================================== */
+.navbar {
+    background-color: rgba(18, 18, 20, 0.8);
+    backdrop-filter: blur(10px);
+    position: fixed;
+    top: 0;
+    left: 0;
     width: 100%;
-    max-width: 1100px;
+    z-index: 1000;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.05);
 }
 
-/* --- Kartu Harga (Pricing Card) --- */
-.card {
-    background: #1e2235;
-    border: 2px solid #2d334d;
-    border-radius: 12px;
-    padding: 35px 25px;
-    text-align: center;
-    position: relative;
-    transition: all 0.3s ease;
+.nav-container {
     display: flex;
-    flex-direction: column;
     justify-content: space-between;
+    align-items: center;
+    height: 70px;
 }
 
-/* Efek Hover */
-.card:hover {
-    transform: translateY(-10px);
-    border-color: #3b82f6;
-    box-shadow: 0 10px 30px rgba(59, 130, 246, 0.2);
-}
-
-/* Sorotan untuk Paket Spesial/Rekomendasi */
-.card.active {
-    border-color: #ff9f43;
-    box-shadow: 0 10px 25px rgba(255, 159, 67, 0.15);
-}
-
-/* --- Komponen di dalam Kartu --- */
-.badge {
-    position: absolute;
-    top: 15px;
-    right: 15px;
-    background: #3b82f6;
-    color: #fff;
-    font-size: 0.75rem;
-    padding: 4px 10px;
-    border-radius: 20px;
-    font-weight: bold;
-    text-transform: uppercase;
-}
-
-.card.active .badge {
-    background: #ff9f43;
-}
-
-.package-name {
-    font-size: 1.5rem;
-    color: #fff;
-    margin-bottom: 15px;
-}
-
-.price {
-    font-size: 2rem;
-    font-weight: bold;
-    color: #ffffff;
-    margin-bottom: 25px;
-}
-
-.price span {
-    font-size: 1rem;
-    color: #94a3b8;
-    font-weight: normal;
-}
-
-/* --- List Fitur --- */
-.features {
-    list-style: none;
-    margin-bottom: 35px;
-    text-align: left;
-}
-
-.features li {
-    padding: 10px 0;
-    color: #cbd5e1;
-    border-bottom: 1px solid #2d334d;
-    font-size: 0.95rem;
-}
-
-.features li strong {
-    color: #fff;
-}
-
-.features li::before {
-    content: "✓ ";
-    color: #10b981; /* Centang hijau */
-    font-weight: bold;
-    margin-right: 8px;
-}
-
-/* --- Tombol Aksi --- */
-.btn {
-    display: block;
-    padding: 12px 25px;
-    background: transparent;
-    color: #3b82f6;
-    border: 2px solid #3b82f6;
+.navbar .logo {
+    font-family: var(--font-heading);
+    font-size: 1.4rem;
+    font-weight: 700;
+    color: var(--primary);
     text-decoration: none;
-    border-radius: 8px;
-    font-weight: bold;
-    transition: all 0.3s ease;
+    display: flex;
+    align-items: center;
+    gap: 8px;
 }
 
-.btn:hover {
-    background: #3b82f6;
+.nav-links {
+    display: flex;
+    list-style: none;
+    align-items: center;
+    gap: 25px;
+}
+
+.nav-links a {
+    color: var(--text-muted);
+    text-decoration: none;
+    font-size: 0.95rem;
+    font-weight: 600;
+    transition: color 0.3s ease;
+}
+
+.nav-links a:hover {
+    color: var(--primary);
+}
+
+.nav-links .nav-github {
+    background-color: rgba(255, 255, 255, 0.05);
+    padding: 6px 12px;
+    border-radius: 6px;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.nav-links .nav-github:hover {
+    background-color: rgba(255, 255, 255, 0.1);
     color: #fff;
 }
 
-/* Tombol Utama pada Paket Rekomendasi */
+/* ==========================================================================
+   3. HERO SECTION
+   ========================================================================== */
+.hero {
+    padding: 160px 0 100px 0;
+    background: radial-gradient(circle at top right, rgba(179, 125, 78, 0.15), transparent 40%),
+                radial-gradient(circle at bottom left, rgba(46, 204, 113, 0.05), transparent 30%);
+    text-align: center;
+}
+
+.hero .badge {
+    display: inline-block;
+    background-color: rgba(179, 125, 78, 0.1);
+    color: var(--primary);
+    border: 1px solid rgba(179, 125, 78, 0.2);
+    padding: 6px 16px;
+    border-radius: 50px;
+    font-size: 0.8rem;
+    font-weight: 700;
+    letter-spacing: 1px;
+    margin-bottom: 20px;
+}
+
+.hero h1 {
+    font-family: var(--font-heading);
+    font-size: 3.5rem;
+    line-height: 1.1;
+    font-weight: 700;
+    margin-bottom: 20px;
+}
+
+.hero h1 span {
+    color: var(--primary);
+}
+
+.hero p {
+    font-size: 1.15rem;
+    color: var(--text-muted);
+    max-width: 700px;
+    margin: 0 auto 35px auto;
+}
+
+.hero-action {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    margin-bottom: 30px;
+}
+
+/* Tombol-tombol */
+.btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    padding: 14px 28px;
+    font-size: 1rem;
+    font-weight: 600;
+    border-radius: 8px;
+    text-decoration: none;
+    transition: all 0.3s ease;
+    cursor: pointer;
+}
+
 .btn-primary {
-    background: #ff9f43;
-    color: #10121d;
-    border-color: #ff9f43;
+    background-color: var(--primary);
+    color: #fff;
+    border: none;
+    box-shadow: 0 4px 15px rgba(179, 125, 78, 0.3);
 }
 
 .btn-primary:hover {
-    background: #e0852b;
-    border-color: #e0852b;
-    color: #10121d;
+    background-color: var(--primary-hover);
+    transform: translateY(-2px);
+}
+
+.btn-secondary {
+    background-color: transparent;
+    color: var(--text-main);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.btn-secondary:hover {
+    background-color: rgba(255, 255, 255, 0.05);
+    border-color: rgba(255, 255, 255, 0.4);
+}
+
+/* Alamat Server Box */
+.server-address {
+    display: inline-flex;
+    align-items: center;
+    background-color: var(--bg-card);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    padding: 8px 16px;
+    border-radius: 6px;
+    gap: 12px;
+}
+
+.server-address code {
+    font-family: monospace;
+    color: #fff;
+    font-size: 1rem;
+}
+
+.server-address button {
+    background: none;
+    border: none;
+    color: var(--text-muted);
+    cursor: pointer;
+    font-size: 1.1rem;
+    transition: color 0.2s;
+}
+
+.server-address button:hover {
+    color: var(--primary);
+}
+
+/* ==========================================================================
+   4. SECTION UTAMA & FITUR
+   ========================================================================== */
+.section {
+    padding: 90px 0;
+}
+
+.section-alt {
+    background-color: rgba(255, 255, 255, 0.01);
+    border-top: 1px solid rgba(255, 255, 255, 0.02);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.02);
+}
+
+.section-header {
+    text-align: center;
+    max-width: 600px;
+    margin: 0 auto 50px auto;
+}
+
+.section-header h2 {
+    font-family: var(--font-heading);
+    font-size: 2.2rem;
+    margin-bottom: 15px;
+}
+
+.section-header p {
+    color: var(--text-muted);
+}
+
+.grid-features {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 25px;
+}
+
+.card {
+    background-color: var(--bg-card);
+    border: 1px solid rgba(255, 255, 255, 0.04);
+    padding: 35px 30px;
+    border-radius: 12px;
+    transition: transform 0.3s, border-color 0.3s;
+}
+
+.card:hover {
+    transform: translateY(-5px);
+    border-color: rgba(179, 125, 78, 0.3);
+}
+
+.card-icon {
+    font-size: 2rem;
+    color: var(--primary);
+    margin-bottom: 20px;
+}
+
+.card h3 {
+    font-family: var(--font-heading);
+    font-size: 1.3rem;
+    margin-bottom: 12px;
+}
+
+.card p {
+    color: var(--text-muted);
+    font-size: 0.95rem;
+}
+
+/* ==========================================================================
+   5. STATUS SERVER
+   ========================================================================== */
+.status-box {
+    background-color: var(--bg-card-alt);
+    border: 1px solid rgba(255, 255, 255, 0.06);
+    max-width: 750px;
+    margin: 0 auto;
+    border-radius: 12px;
+    padding: 30px;
+}
+
+.status-header {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+    padding-bottom: 15px;
+    margin-bottom: 25px;
+}
+
+.status-indicator {
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    display: inline-block;
+}
+
+.status-indicator.online {
+    background-color: var(--accent);
+    box-shadow: 0 0 10px var(--accent);
+}
+
+.status-details {
+    display: flex;
+    justify-content: space-around;
+    text-align: center;
+    margin-bottom: 30px;
+    gap: 15px;
+}
+
+.stat-item .stat-num {
+    display: block;
+    font-family: var(--font-heading);
+    font-size: 2.5rem;
+    font-weight: 700;
+    color: #fff;
+    line-height: 1.2;
+}
+
+.stat-item .stat-label {
+    font-size: 0.85rem;
+    color: var(--text-muted);
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.active-channels h4 {
+    font-family: var(--font-heading);
+    margin-bottom: 15px;
+    color: var(--text-main);
+    font-size: 1rem;
+}
+
+.active-channels ul {
+    list-style: none;
+}
+
+.active-channels li {
+    background-color: rgba(0, 0, 0, 0.2);
+    padding: 12px 16px;
+    border-radius: 6px;
+    margin-bottom: 8px;
+    font-size: 0.9rem;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    border-left: 3px solid var(--primary);
+}
+
+.active-channels li span {
+    margin-left: auto;
+    color: var(--accent);
+    font-weight: 600;
+    font-size: 0.85rem;
+}
+
+/* ==========================================================================
+   6. PANDUAN JOIN (STEPS)
+   ========================================================================== */
+.steps-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 30px;
+    position: relative;
+}
+
+.step {
+    background-color: var(--bg-card);
+    padding: 30px;
+    border-radius: 12px;
+    position: relative;
+    border: 1px solid rgba(255, 255, 255, 0.04);
+}
+
+.step-num {
+    position: absolute;
+    top: -20px;
+    left: 30px;
+    background-color: var(--primary);
+    color: #fff;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: var(--font-heading);
+    font-weight: 700;
+    font-size: 1.1rem;
+    box-shadow: 0 4px 10px rgba(179, 125, 78, 0.4);
+}
+
+.step h3 {
+    margin: 15px 0 10px 0;
+    font-family: var(--font-heading);
+    font-size: 1.2rem;
+}
+
+.step p {
+    color: var(--text-muted);
+    font-size: 0.9rem;
+}
+
+/* ==========================================================================
+   7. FOOTER
+   ========================================================================== */
+.footer {
+    background-color: #0d0d0f;
+    padding: 40px 0;
+    text-align: center;
+    border-top: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.footer-content p {
+    font-size: 0.95rem;
+    color: var(--text-muted);
+}
+
+.footer-content strong {
+    color: var(--text-main);
+}
+
+.footer-sub {
+    font-size: 0.8rem !important;
+    margin-top: 8px;
+    color: rgba(255, 255, 255, 0.3) !important;
+}
+
+/* ==========================================================================
+   8. RESPONSIVE MEDIA QUERIES
+   ========================================================================== */
+@media (max-width: 768px) {
+    .nav-links {
+        display: none; /* Menyederhanakan navbar mobile tanpa JS */
+    }
+    
+    .hero h1 {
+        font-size: 2.5rem;
+    }
+    
+    .hero p {
+        font-size: 1rem;
+    }
+    
+    .hero-action {
+        flex-direction: column;
+        align-items: center;
+    }
+    
+    .btn {
+        width: 100%;
+        max-width: 300px;
+        justify-content: center;
+    }
+    
+    .status-details {
+        flex-direction: column;
+        gap: 20px;
+    }
+    
+    .step {
+        margin-top: 20px;
+    }
 }

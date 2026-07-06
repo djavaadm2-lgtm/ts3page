@@ -1,4 +1,4 @@
-/* Tech Community Style dengan sticky header */
+/* Tech Community Style dengan sidebar navigasi */
 body {
   margin: 0;
   font-family: 'Montserrat', sans-serif;
@@ -6,9 +6,9 @@ body {
   color: #e0e0e0;
 }
 
-/* Header sticky */
+/* Header */
 header {
-  position: fixed;       /* membuat header melayang */
+  position: fixed;
   top: 0;
   left: 0;
   width: 100%;
@@ -17,7 +17,7 @@ header {
   padding: 15px 0;
   text-align: center;
   border-bottom: 2px solid #00d4ff;
-  z-index: 1000;         /* agar selalu di atas konten */
+  z-index: 1000;
 }
 
 header h1 {
@@ -26,35 +26,67 @@ header h1 {
   text-shadow: 0 0 12px #00d4ff;
 }
 
-/* Navigasi */
-nav ul {
-  list-style: none;
-  padding: 0;
-  margin: 10px 0 0;
-  display: flex;
-  justify-content: center;
-  gap: 25px;
+/* Sidebar Navigasi */
+.sidebar {
+  position: fixed;
+  top: 70px; /* di bawah header */
+  left: 0;
+  width: 60px;
+  background: rgba(0, 0, 0, 0.9);
+  height: 100%;
+  padding-top: 20px;
+  z-index: 999;
 }
 
-nav a {
+.sidebar ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.sidebar li {
+  margin: 20px 0;
+}
+
+.sidebar a {
   color: #00d4ff;
   text-decoration: none;
-  font-weight: bold;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+}
+
+.sidebar a i {
+  font-size: 1.5em;
   transition: color 0.3s, text-shadow 0.3s;
 }
 
-nav a:hover {
+.sidebar a:hover i {
   color: #ff00ff;
   text-shadow: 0 0 10px #ff00ff;
 }
 
-nav a i {
-  margin-right: 8px;
+/* Teks tersembunyi, muncul saat hover */
+.sidebar a span {
+  position: absolute;
+  left: 70px;
+  background: rgba(0,0,0,0.8);
+  color: #fff;
+  padding: 5px 10px;
+  border-radius: 4px;
+  opacity: 0;
+  white-space: nowrap;
+  transition: opacity 0.3s;
+}
+
+.sidebar a:hover span {
+  opacity: 1;
 }
 
 /* Section */
 section {
-  padding: 80px 20px; /* tambahkan padding atas agar tidak tertutup header */
+  padding: 100px 20px 50px 80px; /* beri ruang agar tidak tertutup sidebar */
   text-align: center;
   border-bottom: 1px solid rgba(255,255,255,0.2);
 }

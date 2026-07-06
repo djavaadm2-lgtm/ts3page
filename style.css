@@ -1,4 +1,8 @@
-/* Tech Community Style dengan sidebar navigasi */
+/* Mobile friendly Tech Community Style */
+html {
+  scroll-behavior: smooth;
+}
+
 body {
   margin: 0;
   font-family: 'Montserrat', sans-serif;
@@ -22,14 +26,14 @@ header {
 
 header h1 {
   margin: 0;
-  font-size: 2em;
+  font-size: 1.8em;
   text-shadow: 0 0 12px #00d4ff;
 }
 
-/* Sidebar Navigasi */
+/* Sidebar Navigasi (desktop) */
 .sidebar {
   position: fixed;
-  top: 70px; /* di bawah header */
+  top: 70px;
   left: 0;
   width: 60px;
   background: rgba(0, 0, 0, 0.9);
@@ -67,7 +71,6 @@ header h1 {
   text-shadow: 0 0 10px #ff00ff;
 }
 
-/* Teks tersembunyi, muncul saat hover */
 .sidebar a span {
   position: absolute;
   left: 70px;
@@ -84,9 +87,31 @@ header h1 {
   opacity: 1;
 }
 
+/* Floating menu (mobile) */
+.floating-menu {
+  display: none;
+}
+
+.floating-menu a {
+  background: rgba(0,0,0,0.85);
+  color: #00d4ff;
+  padding: 12px;
+  margin: 5px;
+  border-radius: 50%;
+  text-align: center;
+  font-size: 1.2em;
+  box-shadow: 0 0 8px #00d4ff;
+  transition: background 0.3s, color 0.3s;
+}
+
+.floating-menu a:hover {
+  background: #00d4ff;
+  color: #000;
+}
+
 /* Section */
 section {
-  padding: 100px 20px 50px 80px; /* beri ruang agar tidak tertutup sidebar */
+  padding: 100px 20px 50px 80px;
   text-align: center;
   border-bottom: 1px solid rgba(255,255,255,0.2);
 }
@@ -105,6 +130,25 @@ section p {
   font-size: 1.1em;
 }
 
+/* Tombol */
+.btn {
+  display: inline-block;
+  margin: 10px;
+  padding: 12px 20px;
+  background: #00d4ff;
+  color: #000;
+  font-weight: bold;
+  border-radius: 6px;
+  text-decoration: none;
+  transition: background 0.3s, box-shadow 0.3s;
+}
+
+.btn:hover {
+  background: #ff00ff;
+  color: #fff;
+  box-shadow: 0 0 12px #ff00ff;
+}
+
 /* Footer */
 footer {
   background: rgba(0, 0, 0, 0.7);
@@ -112,4 +156,18 @@ footer {
   text-align: center;
   padding: 15px;
   border-top: 2px solid #00d4ff;
+}
+
+/* Responsif */
+@media (max-width: 768px) {
+  .sidebar {
+    display: none;
+  }
+  .floating-menu {
+    display: flex;
+    position: fixed;
+    bottom: 15px;
+    right: 15px;
+    z-index: 1000;
+  }
 }

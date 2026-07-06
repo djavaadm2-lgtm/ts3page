@@ -29,9 +29,10 @@ header h1 {
   font-size: 1.8em;
   font-weight: 500;
 }
+
 /* Carousel */
 .carousel {
-  margin-top: 70px; /* beri ruang di bawah header */
+  margin-top: 70px; /* ruang di bawah header */
   width: 100%;
   overflow: hidden;
   position: relative;
@@ -50,17 +51,12 @@ header h1 {
   box-shadow: 0 2px 6px rgba(0,0,0,0.2);
 }
 
-/* Animasi slide */
 @keyframes slide {
-  0% { transform: translateX(0); }
-  30% { transform: translateX(0); }
-  33% { transform: translateX(-100%); }
-  63% { transform: translateX(-100%); }
-  66% { transform: translateX(-200%); }
-  96% { transform: translateX(-200%); }
+  0%,30% { transform: translateX(0); }
+  33%,63% { transform: translateX(-100%); }
+  66%,96% { transform: translateX(-200%); }
   100% { transform: translateX(0); }
 }
-
 
 /* Floating vertical menu */
 .floating-menu {
@@ -89,14 +85,19 @@ header h1 {
   transform: scale(1.1);
 }
 
-/* Card Layout */
+/* Section Card Layout */
+section {
+  scroll-margin-top: 90px; /* agar tidak tertutup header */
+}
+
 .card {
   background: #fff;
-  margin: 100px 20px 30px 20px; /* full width */
+  margin: 40px auto;
   padding: 20px;
   border-radius: 8px;
   box-shadow: 0 2px 8px rgba(0,0,0,0.1);
   text-align: center;
+  max-width: 800px; /* center dengan lebar rapi */
 }
 
 .card h2 {
@@ -110,6 +111,21 @@ header h1 {
 
 .card p {
   font-size: 1.1em;
+}
+
+/* Paket sewa server */
+.paket {
+  background: #f9f9f9;
+  margin: 15px 0;
+  padding: 15px;
+  border-radius: 6px;
+  box-shadow: 0 1px 4px rgba(0,0,0,0.1);
+  text-align: left;
+}
+
+.paket h3 {
+  color: #2196f3;
+  margin-bottom: 5px;
 }
 
 /* Tombol Material */

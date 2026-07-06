@@ -1,4 +1,4 @@
-/* Material Design Style tanpa sidebar */
+/* Material Design Style */
 html {
   scroll-behavior: smooth;
 }
@@ -32,7 +32,7 @@ header h1 {
 
 /* Carousel */
 .carousel {
-  margin-top: 70px; /* ruang di bawah header */
+  margin-top: 70px;
   width: 100%;
   overflow: hidden;
   position: relative;
@@ -40,7 +40,7 @@ header h1 {
 
 .carousel .slides {
   display: flex;
-  width: 300%; /* 3 gambar */
+  width: 300%;
   animation: slide 12s infinite;
 }
 
@@ -87,7 +87,7 @@ header h1 {
 
 /* Section Card Layout */
 section {
-  scroll-margin-top: 90px; /* agar tidak tertutup header */
+  scroll-margin-top: 90px;
 }
 
 .card {
@@ -97,7 +97,7 @@ section {
   border-radius: 8px;
   box-shadow: 0 2px 8px rgba(0,0,0,0.1);
   text-align: center;
-  max-width: 800px; /* center dengan lebar rapi */
+  max-width: 800px;
 }
 
 .card h2 {
@@ -116,11 +116,12 @@ section {
 /* Paket sewa server */
 .paket {
   background: #f9f9f9;
-  margin: 15px 0;
+  margin: 20px 0;
   padding: 15px;
   border-radius: 6px;
   box-shadow: 0 1px 4px rgba(0,0,0,0.1);
   text-align: left;
+  position: relative;
 }
 
 .paket h3 {
@@ -128,52 +129,11 @@ section {
   margin-bottom: 5px;
 }
 
-/* Tombol Material */
-.btn {
-  display: inline-block;
-  margin: 10px;
-  padding: 12px 20px;
-  background: #2196f3;
-  color: #fff;
-  font-weight: 500;
-  border-radius: 4px;
-  text-decoration: none;
-  position: relative;
-  overflow: hidden;
+.paket h3 i {
+  color: #ff9800;
+  margin-right: 8px;
 }
 
-.btn.secondary {
-  background: #ff9800;
-}
-
-.btn:hover {
-  background: #1976d2;
-}
-
-/* Ripple Effect */
-.btn::after {
-  content: "";
+.badge {
   position: absolute;
-  background: rgba(255,255,255,0.5);
-  border-radius: 50%;
-  width: 100px;
-  height: 100px;
-  transform: scale(0);
-  opacity: 0;
-  transition: transform 0.5s, opacity 1s;
-}
-
-.btn:active::after {
-  transform: scale(2);
-  opacity: 1;
-  transition: 0s;
-}
-
-/* Footer */
-footer {
-  background: #1976d2;
-  color: #fff;
-  text-align: center;
-  padding: 15px;
-  margin-top: 30px;
-}
+  top: -10px

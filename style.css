@@ -42,6 +42,10 @@ nav a:hover {
   text-shadow: 0 0 10px #ff00ff;
 }
 
+nav a i {
+  margin-right: 8px;
+}
+
 /* Section */
 section {
   padding: 50px 20px;
@@ -52,6 +56,11 @@ section {
 section h2 {
   color: #00d4ff;
   text-shadow: 0 0 8px #00d4ff;
+  margin-bottom: 15px;
+}
+
+section h2 i {
+  margin-right: 10px;
 }
 
 section p {

@@ -3,51 +3,165 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Server Ngopi Indonesia - Komunitas Briker TeamSpeak</title>
+    <meta name="description" content="Landing Page Komunitas Briker TeamSpeak - Server Ngopi Indonesia. Tempat berkumpul dan berkomunikasi berbasis VoIP.">
+    <title>Server Ngopi Indonesia | Komunitas Briker TeamSpeak</title>
+    
+    <!-- Link CSS Utama -->
     <link rel="stylesheet" href="style.css">
-    <!-- Menggunakan Font Awesome untuk ikon -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    
+    <!-- Google Fonts (Menggunakan font modern & tegas) -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&family=Space+Grotesk:wght@500;700&display=swap" rel="stylesheet">
+    
+    <!-- Font Awesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
 <body>
 
-    <!-- Header / Hero Section -->
+    <!-- NAVBAR (Navigasi Atas) -->
+    <nav class="navbar">
+        <div class="container nav-container">
+            <a href="#" class="logo"><i class="fa-solid fa-mug-hot"></i> Ngopi ID</a>
+            <ul class="nav-links">
+                <li><a href="#tentang">Tentang</a></li>
+                <li><a href="#status">Status Server</a></li>
+                <li><a href="#panduan">Panduan</a></li>
+                <li><a href="https://github.com/USERNAME/REPO-ANDA" target="_blank" class="nav-github"><i class="fa-brands fa-github"></i> GitHub</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- HERO SECTION (Bagian Utama) -->
     <header class="hero">
-        <div class="container">
-            <h1>☕ Server Ngopi Indonesia</h1>
-            <p>Komunitas Briker & Pengguna TeamSpeak Indonesia. Tempat berkumpul, berdiskusi, dan menjalin persaudaraan tanpa batas.</p>
-            <a href="ts3server://ALAMAT_SERVER_TS_ANDA" class="btn-connect"><i class="fa-solid fa-headset"></i> Connect to TeamSpeak</a>
+        <div class="container hero-content">
+            <div class="badge">📡 KOMUNITAS VOIP INDONESIA</div>
+            <h1>Server Ngopi<br><span>Indonesia</span></h1>
+            <p>Gabung bersama komunitas Briker dan pengguna TeamSpeak 3 terbesar di Indonesia. Jalin silaturahmi, diskusi teknologi, atau sekadar ngobrol santai ditemani secangkir kopi.</p>
+            
+            <div class="hero-action">
+                <!-- Ganti ALAMAT_SERVER_TS dengan IP atau Domain TS Anda -->
+                <a href="ts3server://ALAMAT_SERVER_TS?port=9987" class="btn btn-primary">
+                    <i class="fa-solid fa-headset"></i> Connect Server TS3
+                </a>
+                <a href="#panduan" class="btn btn-secondary">Cara Join</a>
+            </div>
+            
+            <!-- Info Cepat Alamat Server -->
+            <div class="server-address">
+                <code>Address: ts.ngopi-indonesia.com</code>
+                <button onclick="navigator.clipboard.writeText('ts.ngopi-indonesia.com'); alert('Alamat server disalin!')" title="Salin Alamat">
+                    <i class="fa-regular fa-copy"></i>
+                </button>
+            </div>
         </div>
     </header>
 
-    <!-- Info Section -->
-    <section class="info-section">
+    <!-- TENTANG & FITUR -->
+    <section id="tentang" class="section">
         <div class="container">
-            <h2>Tentang Kami</h2>
-            <p>Kami adalah wadah komunikasi berbasis VoIP yang mengintegrasikan semangat komunitas Briker (Radio Antar Penduduk/RAPI/ORARI style) ke dalam platform modern TeamSpeak 3. Sambil ngopi santai, kita jalin silaturahmi!</p>
+            <div class="section-header">
+                <h2>Kenapa Memilih Server Ngopi?</h2>
+                <p>Kami mengintegrasikan budaya komunikasi radio (Briker style) dengan teknologi modern.</p>
+            </div>
             
-            <div class="features">
+            <div class="grid-features">
                 <div class="card">
-                    <i class="fa-solid fa-server size-icon"></i>
-                    <h3>Server Stabil</h3>
-                    <p>Infrastruktur Briker Server yang dioptimalkan untuk latensi rendah dan suara jernih.</p>
+                    <div class="card-icon"><i class="fa-solid fa-gauge-high"></i></div>
+                    <h3>Low Latency</h3>
+                    <p>Server dihosting di datacenter Indonesia (IIX) untuk memastikan suara jernih tanpa delay.</p>
                 </div>
                 <div class="card">
-                    <i class="fa-solid fa-users"></i>
-                    <h3>Komunitas Ramah</h3>
-                    <p>Terbuka untuk siapa saja, dari pakar radio komunikasi hingga pengguna awam.</p>
+                    <div class="card-icon"><i class="fa-solid fa-shield-halved"></i></div>
+                    <h3>Anti-DDoS & Aman</h3>
+                    <p>Perlindungan jaringan berlapis agar sesi "ngopi" dan mengobrol Anda tidak terganggu.</p>
                 </div>
                 <div class="card">
-                    <i class="fa-solid fa-mug-hot"></i>
-                    <h3>Room Sesuai Selera</h3>
-                    <p>Tersedia berbagai channel mulai dari obrolan teknis, hobi, hingga room santai (warung kopi).</p>
+                    <div class="card-icon"><i class="fa-solid fa-comments"></i></div>
+                    <h3>Room Terstruktur</h3>
+                    <p>Mulai dari Room Utama (Warung Kopi), Room Teknis Briker, hingga Room Komunitas Radio Pasundan.</p>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Footer -->
-    <footer>
-        <p>&copy; 2026 Server Ngopi Indonesia. Powered by Briker & TeamSpeak.</p>
+    <!-- STATUS SERVER (Live/Placeholder Widget) -->
+    <section id="status" class="section section-alt">
+        <div class="container">
+            <div class="section-header">
+                <h2>Status Server Saat Ini</h2>
+                <p>Pantau langsung aktivitas room sebelum Anda masuk.</p>
+            </div>
+            
+            <div class="status-box">
+                <div class="status-header">
+                    <span class="status-indicator online"></span>
+                    <h3>Server Online</h3>
+                </div>
+                
+                <!-- Jika Anda punya TS3 Web Viewer widget (seperti dari TSViewer.com / GameTracker), pasang di sini. 
+                     Sebagai alternatif, ini adalah layout tampilan statis/placeholder yang rapi -->
+                <div class="status-details">
+                    <div class="stat-item">
+                        <span class="stat-num">42</span>
+                        <span class="stat-label">User Online</span>
+                    </div>
+                    <div class="stat-item">
+                        <span class="stat-num">12</span>
+                        <span class="stat-label">Active Rooms</span>
+                    </div>
+                    <div class="stat-item">
+                        <span class="stat-num">99.9%</span>
+                        <span class="stat-label">Uptime</span>
+                    </div>
+                </div>
+                
+                <div class="active-channels">
+                    <h4><i class="fa-solid fa-folder-open"></i> Channel Populer Hari Ini:</h4>
+                    <ul>
+                        <li><i class="fa-solid fa-volume-high"></i> [01] LOBBY UTAMA - WARUNG KOPI <span>(15 Users)</span></li>
+                        <li><i class="fa-solid fa-microphone-lines"></i> [02] BRICKER REGIONAL JABODETABEK <span>(8 Users)</span></li>
+                        <li><i class="fa-solid fa-gears"></i> [03] NGREKSO / OPREK SERVER <span>(4 Users)</span></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- PANDUAN JOIN -->
+    <section id="panduan" class="section">
+        <div class="container">
+            <div class="section-header">
+                <h2>Cara Bergabung</h2>
+                <p>Ikuti 3 langkah mudah berikut untuk mulai mengobrol bersama kami.</p>
+            </div>
+            
+            <div class="steps-container">
+                <div class="step">
+                    <div class="step-num">1</div>
+                    <h3>Download Client</h3>
+                    <p>Unduh dan instal aplikasi TeamSpeak 3 Client sesuai dengan perangkat Anda (PC/Android/iOS).</p>
+                </div>
+                <div class="step">
+                    <div class="step-num">2</div>
+                    <h3>Masukkan Alamat</h3>
+                    <p>Buka TeamSpeak, klik menu <strong>Connections > Connect</strong>, lalu masukkan alamat server kami.</p>
+                </div>
+                <div class="step">
+                    <div class="step-num">3</div>
+                    <h3>Gunakan Nickname</h3>
+                    <p>Gunakan format nama panggilan Anda (contoh: <code>Budi_Jakarta</code>) untuk memudahkan menyapa.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="footer">
+        <div class="container footer-content">
+            <p>&copy; 2026 <strong>Server Ngopi Indonesia</strong>. All Rights Reserved.</p>
+            <p class="footer-sub">Dikelola secara swadaya oleh Komunitas Briker TeamSpeak Indonesia.</p>
+        </div>
     </footer>
 
 </body>

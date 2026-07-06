@@ -60,7 +60,7 @@ header h1 {
 /* Card Layout */
 .card {
   background: #fff;
-  margin: 100px 20px 30px 20px; /* full width tanpa sidebar */
+  margin: 100px 20px 30px 20px; /* full width */
   padding: 20px;
   border-radius: 8px;
   box-shadow: 0 2px 8px rgba(0,0,0,0.1);

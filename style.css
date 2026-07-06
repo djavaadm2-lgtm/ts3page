@@ -1,4 +1,4 @@
-/* Mobile friendly Tech Community Style */
+/* Mobile friendly Tech Community Style dengan navigasi vertikal */
 html {
   scroll-behavior: smooth;
 }
@@ -87,7 +87,7 @@ header h1 {
   opacity: 1;
 }
 
-/* Floating menu (mobile) */
+/* Floating vertical menu (mobile) */
 .floating-menu {
   display: none;
 }
@@ -96,7 +96,7 @@ header h1 {
   background: rgba(0,0,0,0.85);
   color: #00d4ff;
   padding: 12px;
-  margin: 5px;
+  margin: 5px 0;
   border-radius: 50%;
   text-align: center;
   font-size: 1.2em;
@@ -163,11 +163,4 @@ footer {
   .sidebar {
     display: none;
   }
-  .floating-menu {
-    display: flex;
-    position: fixed;
-    bottom: 15px;
-    right: 15px;
-    z-index: 1000;
-  }
-}
+  .floating-menu

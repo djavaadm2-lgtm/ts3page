@@ -3,188 +3,196 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Landing Page Komunitas Briker TeamSpeak - Server Ngopi Indonesia.">
-    <title>Server Ngopi Indonesia | Komunitas Briker TeamSpeak</title>
-    
-    <link rel="stylesheet" href="style.css">
-    
+    <title>Server Ngopi Indonesia - 3D Experience</title>
+    <!-- Google Fonts & Material Icons -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
-    
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;700&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons+Round" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-    <header class="md-top-app-bar">
+    <!-- 3D Background Ambient Space -->
+    <div class="space-3d-bg">
+        <div class="orb orb-1"></div>
+        <div class="orb orb-2"></div>
+    </div>
+
+    <!-- Top App Bar -->
+    <nav class="md-top-app-bar">
         <div class="md-container nav-wrapper">
             <div class="md-app-bar-brand">
-                <span class="material-symbols-outlined icon-brand">coffee</span>
-                <span class="md-title-large">Ngopi ID</span>
+                <span class="material-icons-round icon-brand">coffee</span>
+                <span class="md-label-large text-brand">Ngopi ID</span>
             </div>
-            <nav class="md-app-bar-navigation">
-                <a href="#tentang" class="md-nav-link">Tentang</a>
+            <div class="md-app-bar-navigation">
+                <a href="#home" class="md-nav-link">Beranda</a>
+                <a href="#fitur" class="md-nav-link">Layanan</a>
                 <a href="#status" class="md-nav-link">Status Server</a>
-                <a href="#panduan" class="md-nav-link">Panduan</a>
-                <a href="https://github.com/USERNAME/REPO-ANDA" target="_blank" class="md-nav-link md-nav-icon">
-                    <span class="material-symbols-outlined">code</span> GitHub
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section with 3D Card Perspective -->
+    <header id="home" class="md-section md-hero">
+        <div class="md-container hero-wrapper">
+            <div class="md-chip">
+                <span class="material-icons-round md-icon-small animate-pulse">hub</span>
+                <span class="md-label-small text-chip">Komunitas VoIP & RoIP Indonesia</span>
+            </div>
+            
+            <h1 class="md-display-large">Hubungkan Radio & VoIP Anda di <br><span class="text-primary">Server Ngopi</span></h1>
+            <p class="md-body-large">Platform komunikasi multimedia berbasis IP yang stabil, rendah latensi, dan dirancang khusus untuk breaker maupun komunitas amatir radio Indonesia.</p>
+
+            <!-- Alamat Server Box -->
+            <div class="md-surface-container scene-3d">
+                <div class="card-3d inner-container">
+                    <span class="material-icons-round text-primary">dns</span>
+                    <code id="server-domain">ngopi.bukanmaen.id</code>
+                    <button class="md-icon-button" onclick="salinDomain()" title="Salin Alamat">
+                        <span class="material-icons-round">content_copy</span>
+                    </button>
+                </div>
+            </div>
+
+            <div class="md-button-group">
+                <a href="#fitur" class="md-btn md-btn-filled">
+                    <span class="material-icons-round">explore</span> Jelajahi Fitur
                 </a>
-            </nav>
+                <a href="https://teamspeak.com" target="_blank" class="md-btn md-btn-outlined">
+                    <span class="material-icons-round">download</span> Unduh Klien
+                </a>
+            </div>
         </div>
     </header>
 
-    <section class="md-hero">
-        <div class="md-container hero-wrapper">
-            <div class="md-chip">
-                <span class="material-symbols-outlined md-icon-small">settings_input_antenna</span>
-                <span class="md-label-large">Komunitas VoIP dan RoIP Indonesia</span>
-            </div>
-            
-            <h1 class="md-display-large">Server Ngopi<br><span class="text-primary">Indonesia</span></h1>
-            <p class="md-body-large">Gabung bersama komunitas Briker dan pengguna TeamSpeak 3 terbesar di Indonesia. Jalin silaturahmi, diskusi teknologi, atau sekadar ngobrol santai ditemani secangkir kopi.</p>
-            
-            <div class="md-button-group">
-                <a href="ts3server://ALAMAT_SERVER_TS?port=9987" class="md-btn md-btn-filled">
-                    <span class="material-symbols-outlined">headset</span>
-                    Connect Server TS3
-                </a>
-                <a href="#panduan" class="md-btn md-btn-outlined">
-                    Cara Join
-                </a>
-            </div>
-            
-            <div class="md-surface-container">
-                <span class="material-symbols-outlined text-primary">dns</span>
-                <code class="md-body-medium">ts.ngopi-indonesia.com</code>
-                <button class="md-icon-button" onclick="navigator.clipboard.writeText('ts.ngopi-indonesia.com'); alert('Alamat server disalin!')" title="Salin Alamat">
-                    <span class="material-symbols-outlined">content_copy</span>
-                </button>
-            </div>
-        </div>
-    </section>
-
-    <section id="tentang" class="md-section">
+    <!-- Features Section (Grid Cards 3D Effect) -->
+    <section id="fitur" class="md-section md-section-tonal">
         <div class="md-container">
             <div class="md-section-header">
-                <h2 class="md-headline-large">Kenapa Memilih Server Ngopi?</h2>
-                <p class="md-body-medium">Kami mengintegrasikan budaya komunikasi radio (Briker style) dengan teknologi modern.</p>
+                <span class="md-title-small">Keunggulan Utama</span>
+                <h2 class="md-headline-large">Teknologi RoIP Modern</h2>
             </div>
-            
+
             <div class="md-grid">
-                <div class="md-card md-card-elevated">
+                <!-- Card 1 -->
+                <div class="md-card md-card-elevated tilt-3d">
                     <div class="md-card-icon-wrapper">
-                        <span class="material-symbols-outlined">speed</span>
+                        <span class="material-icons-round">router</span>
                     </div>
-                    <h3 class="md-title-large">Low Latency</h3>
-                    <p class="md-body-medium">Server dihosting di datacenter Indonesia (IIX) untuk memastikan suara jernih tanpa delay.</p>
+                    <h3 class="md-title-large">Radio Gateway (RoIP)</h3>
+                    <p class="md-body-medium">Menghubungkan perangkat HT/RIG fisik Anda ke jaringan digital server menggunakan interface gateway yang andal.</p>
                 </div>
 
-                <div class="md-card md-card-elevated">
+                <!-- Card 2 -->
+                <div class="md-card md-card-elevated tilt-3d">
                     <div class="md-card-icon-wrapper">
-                        <span class="material-symbols-outlined">shield</span>
+                        <span class="material-icons-round">record_voice_over</span>
                     </div>
-                    <h3 class="md-title-large">Anti-DDoS & Aman</h3>
-                    <p class="md-body-medium">Perlindungan jaringan berlapis agar sesi "ngopi" dan mengobrol Anda tidak terganggu.</p>
+                    <h3 class="md-title-large">Suara Jernih & Ringan</h3>
+                    <p class="md-body-medium">Menggunakan codec audio mutakhir untuk menjamin suara modulasi tetap empuk dan hemat kuota data.</p>
                 </div>
 
-                <div class="md-card md-card-elevated">
+                <!-- Card 3 -->
+                <div class="md-card md-card-elevated tilt-3d">
                     <div class="md-card-icon-wrapper">
-                        <span class="material-symbols-outlined">forum</span>
+                        <span class="material-icons-round">groups</span>
                     </div>
-                    <h3 class="md-title-large">Room Terstruktur</h3>
-                    <p class="md-body-medium">Mulai dari Room Utama (Warung Kopi), Room Teknis Briker, hingga Room Komunitas Radio Pasundan.</p>
+                    <h3 class="md-title-large">Multi-Room Komunitas</h3>
+                    <p class="md-body-medium">Tersedia berbagai pilihan kamar (channel) regional maupun hobi untuk berdiskusi santai ditemani secangkir kopi.</p>
                 </div>
             </div>
         </div>
     </section>
 
-    <section id="status" class="md-section md-section-tonal">
+    <!-- Realtime Status Section (3D Glassmorphism Panel) -->
+    <section id="status" class="md-section">
         <div class="md-container">
             <div class="md-section-header">
-                <h2 class="md-headline-large">Status Server Saat Ini</h2>
-                <p class="md-body-medium">Pantau langsung aktivitas room sebelum Anda masuk.</p>
+                <span class="md-title-small">Monitoring</span>
+                <h2 class="md-headline-large">Kondisi Server Saat Ini</h2>
             </div>
-            
-            <div class="md-status-panel md-card-outlined">
+
+            <div class="md-status-panel panel-3d">
                 <div class="md-status-header">
-                    <span class="md-indicator-dot online animate-pulse"></span>
-                    <span class="md-title-medium">Server Online</span>
+                    <div class="md-indicator-dot online animate-pulse"></div>
+                    <span class="md-title-medium">Server Utama Aktif</span>
                 </div>
-                
+
                 <div class="md-status-metrics">
                     <div class="md-metric-item">
-                        <span class="md-display-medium text-primary">42</span>
-                        <span class="md-label-medium">User Online</span>
+                        <p class="md-label-small">PENGGUNA</p>
+                        <p class="md-display-large text-primary">142</p>
                     </div>
                     <div class="md-metric-item">
-                        <span class="md-display-medium text-primary">12</span>
-                        <span class="md-label-medium">Active Rooms</span>
+                        <p class="md-label-small">LATENSI RATA-RATA</p>
+                        <p class="md-display-large text-success">24ms</p>
                     </div>
                     <div class="md-metric-item">
-                        <span class="md-display-medium text-primary">99.9%</span>
-                        <span class="md-label-medium">Uptime</span>
+                        <p class="md-label-small">GATEWAY ONLINE</p>
+                        <p class="md-display-large text-primary">18</p>
                     </div>
                 </div>
-                
-                <div class="md-list-container">
-                    <h4 class="md-title-small">Channel Populer Hari Ini</h4>
-                    <ul class="md-list">
-                        <li class="md-list-item">
-                            <span class="material-symbols-outlined md-list-icon">volume_up</span>
-                            <div class="md-list-text">[01] LOBBY UTAMA - WARUNG KOPI</div>
-                            <span class="md-badge-count">15 Users</span>
-                        </li>
-                        <li class="md-list-item">
-                            <span class="material-symbols-outlined md-list-icon">graphic_eq</span>
-                            <div class="md-list-text">[02] BRICKER REGIONAL JABODETABEK</div>
-                            <span class="md-badge-count">8 Users</span>
-                        </li>
-                        <li class="md-list-item">
-                            <span class="material-symbols-outlined md-list-icon">build</span>
-                            <div class="md-list-text">[03] NGREKSO / OPREK SERVER</div>
-                            <span class="md-badge-count">4 Users</span>
-                        </li>
-                    </ul>
+
+                <div class="md-list">
+                    <div class="md-list-item">
+                        <span class="material-icons-round md-list-icon">radio</span>
+                        <div class="md-list-text">Link Gateway Jabodetabek - Ch 01</div>
+                        <span class="md-badge-count">Terhubung</span>
+                    </div>
+                    <div class="md-list-item">
+                        <span class="material-icons-round md-list-icon">radio</span>
+                        <div class="md-list-text">Link Gateway Jawa Tengah - Ch 02</div>
+                        <span class="md-badge-count">Terhubung</span>
+                    </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <section id="panduan" class="md-section">
-        <div class="md-container">
-            <div class="md-section-header">
-                <h2 class="md-headline-large">Cara Bergabung</h2>
-                <p class="md-body-medium">Ikuti 3 langkah mudah berikut untuk mulai mengobrol bersama kami.</p>
-            </div>
-            
-            <div class="md-grid">
-                <div class="md-card md-card-tonal">
-                    <div class="md-step-badge">1</div>
-                    <h3 class="md-title-large">Download Client</h3>
-                    <p class="md-body-medium">Unduh dan instal aplikasi TeamSpeak 3 Client sesuai dengan perangkat Anda (PC/Android/iOS).</p>
-                </div>
-
-                <div class="md-card md-card-tonal">
-                    <div class="md-step-badge">2</div>
-                    <h3 class="md-title-large">Masukkan Alamat</h3>
-                    <p class="md-body-medium">Buka TeamSpeak, klik menu <strong>Connections > Connect</strong>, lalu masukkan alamat server kami.</p>
-                </div>
-
-                <div class="md-card md-card-tonal">
-                    <div class="md-step-badge">3</div>
-                    <h3 class="md-title-large">Gunakan Nickname</h3>
-                    <p class="md-body-medium">Gunakan format nama panggilan Anda (contoh: <code>Budi_Jakarta</code>) untuk memudahkan menyapa.</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
+    <!-- Footer -->
     <footer class="md-footer">
         <div class="md-container">
-            <p class="md-body-medium">© 2026 <strong>Server Ngopi Indonesia</strong>.</p>
-            <p class="md-label-small">Dikelola secara swadaya oleh Komunitas Briker TeamSpeak Indonesia.</p>
+            <p class="md-label-small">&copy; 2026 Server Ngopi Indonesia. Dibuat dengan Material 3 Design & 3D Depth Engine.</p>
         </div>
     </footer>
 
+    <!-- JavaScript Engine untuk Efek Interaktif 3D Tilt -->
+    <script>
+        // Fungsi Salin Domain
+        function salinDomain() {
+            const domainText = document.getElementById("server-domain").innerText;
+            navigator.clipboard.writeText(domainText).then(() => {
+                alert("Alamat server berhasil disalin: " + domainText);
+            });
+        }
+
+        // Efek Rotasi Kartu 3D saat Kursor Bergerak (M3 Isometric Depth)
+        const cards = document.querySelectorAll('.tilt-3d, .panel-3d');
+        
+        cards.forEach(card => {
+            card.addEventListener('mousemove', (e) => {
+                const rect = card.getBoundingClientRect();
+                const x = e.clientX - rect.left; // posisi x kursor di dalam kartu
+                const y = e.clientY - rect.top;  // posisi y kursor di dalam kartu
+                
+                const centerX = rect.width / 2;
+                const centerY = rect.height / 2;
+                
+                // Hitung derajat rotasi (maksimal 15 derajat ke segala arah)
+                const rotateX = ((centerY - y) / centerY) * 12;
+                const rotateY = ((x - centerX) / centerX) * 12;
+                
+                card.style.transform = `perspective(1000px) rotateX(${rotateX}deg) rotateY(${rotateY}deg) translateY(-8px)`;
+                card.style.boxShadow = `${-rotateY * 1.5}px ${rotateX * 1.5}px 30px rgba(255, 181, 137, 0.15)`;
+            });
+            
+            card.addEventListener('mouseleave', () => {
+                card.style.transform = 'perspective(1000px) rotateX(0deg) rotateY(0deg) translateY(0)';
+                card.style.boxShadow = 'none';
+            });
+        });
+    </script>
 </body>
 </html>

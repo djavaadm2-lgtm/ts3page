@@ -1,5 +1,5 @@
 /* ==========================================================================
-   1. MATERIAL DESIGN SYSTEM TOKENS (MATERIAL 3)
+   1. MATERIAL DESIGN SYSTEM TOKENS & 3D SETTINGS
    ========================================================================== */
 :root {
     /* M3 Dynamic Color Palette (Dark Scheme - Coffee/Terracotta Baseline) */
@@ -8,17 +8,17 @@
     --md-sys-color-primary-container: #743500;
     --md-sys-color-on-primary-container: #ffdbca;
     
-    --md-sys-color-surface: #141210;            /* Hitam Pekat dengan sedikit tint hangat */
+    --md-sys-color-surface: #0f0d0b;            /* Hitam Pekat dengan tint biji kopi sangrai */
     --md-sys-color-on-surface: #e6e1dd;
     --md-sys-color-surface-variant: #52443c;
     --md-sys-color-on-surface-variant: #d7c3b8;
-    --md-sys-color-surface-container: #211f1d;  /* M3 Surface Container */
-    --md-sys-color-surface-container-high: #2c2927;
+    --md-sys-color-surface-container: #1b1916;  /* M3 Surface Container */
+    --md-sys-color-surface-container-high: #262320;
     
     --md-sys-color-outline: #9f8d84;
     --md-sys-color-outline-variant: #52443c;
     --md-sys-color-error: #ffb4ab;
-    --md-sys-color-success: #81d895;           /* Indikator Online */
+    --md-sys-color-success: #81d895;           /* Indikator Latensi Bagus */
 
     /* M3 Shape / Corner Radius */
     --md-shape-corner-small: 8px;
@@ -27,12 +27,13 @@
     --md-shape-corner-extra-large: 28px;
     --md-shape-corner-full: 9999px;
 
-    /* Type Scale */
-    --md-font-family: 'Roboto', sans-serif;
+    /* Typography */
+    --md-font-display: 'Space Grotesk', sans-serif;
+    --md-font-body: 'Plus Jakarta Sans', sans-serif;
 }
 
 /* ==========================================================================
-   2. RESET & BASE LAYOUT
+   2. RESET & BASE LAYOUT (3D ENVIRONMENT)
    ========================================================================== */
 * {
     margin: 0;
@@ -44,9 +45,45 @@
 body {
     background-color: var(--md-sys-color-surface);
     color: var(--md-sys-color-on-surface);
-    font-family: var(--md-font-family);
+    font-family: var(--md-font-body);
     -webkit-font-smoothing: antialiased;
     overflow-x: hidden;
+    perspective: 1200px; /* Memberikan kedalaman spasial global global */
+}
+
+/* 3D Ambient Orbs Background */
+.space-3d-bg {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    z-index: -1;
+    overflow: hidden;
+    pointer-events: none;
+}
+
+.orb {
+    position: absolute;
+    border-radius: var(--md-shape-corner-full);
+    filter: blur(140px);
+    opacity: 0.15;
+}
+
+.orb-1 {
+    top: -10%;
+    right: 10%;
+    width: 400px;
+    height: 400px;
+    background-color: var(--md-sys-color-primary);
+}
+
+.orb-2 {
+    bottom: 10%;
+    left: -5%;
+    width: 500px;
+    height: 500px;
+    background-color: var(--md-sys-color-primary-container);
 }
 
 .md-container {
@@ -57,7 +94,7 @@ body {
 }
 
 .md-section {
-    padding: 80px 0;
+    padding: 100px 0;
 }
 
 .md-section-tonal {
@@ -65,50 +102,50 @@ body {
 }
 
 .md-section-header {
-    margin-bottom: 40px;
+    margin-bottom: 50px;
     text-align: center;
 }
 
 .md-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-    gap: 24px;
+    gap: 32px;
 }
 
 /* ==========================================================================
    3. MATERIAL TYPOGRAPHY CLASSES
    ========================================================================== */
-.md-display-large { font-size: 3.5rem; font-weight: 700; letter-spacing: -0.5px; line-height: 1.15; }
-.md-headline-large { font-size: 2rem; font-weight: 500; letter-spacing: 0px; line-height: 1.25; margin-bottom: 8px; }
-.md-title-large { font-size: 1.35rem; font-weight: 500; letter-spacing: 0px; line-height: 1.4; }
-.md-title-medium { font-size: 1rem; font-weight: 500; letter-spacing: 0.15px; }
-.md-title-small { font-size: 0.85rem; font-weight: 500; letter-spacing: 0.1px; text-transform: uppercase; margin-bottom: 12px; color: var(--md-sys-color-primary); }
-.md-body-large { font-size: 1.15rem; font-weight: 400; letter-spacing: 0.5px; line-height: 1.5; color: var(--md-sys-color-on-surface-variant); }
-.md-body-medium { font-size: 0.95rem; font-weight: 400; letter-spacing: 0.25px; line-height: 1.45; color: var(--md-sys-color-on-surface-variant); }
-.md-label-large { font-size: 0.85rem; font-weight: 500; letter-spacing: 0.1px; }
-.md-label-small { font-size: 0.75rem; font-weight: 400; letter-spacing: 0.4px; color: var(--md-sys-color-outline); }
+.md-display-large { font-family: var(--md-font-display); font-size: 3.5rem; font-weight: 700; letter-spacing: -1px; line-height: 1.15; }
+.md-headline-large { font-family: var(--md-font-display); font-size: 2.5rem; font-weight: 700; letter-spacing: 0px; line-height: 1.25; margin-bottom: 8px; }
+.md-title-large { font-size: 1.4rem; font-weight: 600; letter-spacing: 0px; line-height: 1.4; }
+.md-title-medium { font-size: 1.1rem; font-weight: 600; letter-spacing: 0.15px; }
+.md-title-small { font-size: 0.85rem; font-weight: 600; letter-spacing: 1.5px; text-transform: uppercase; margin-bottom: 12px; color: var(--md-sys-color-primary); }
+.md-body-large { font-size: 1.2rem; font-weight: 400; letter-spacing: 0.2px; line-height: 1.6; color: var(--md-sys-color-on-surface-variant); }
+.md-body-medium { font-size: 0.95rem; font-weight: 400; letter-spacing: 0.25px; line-height: 1.6; color: var(--md-sys-color-on-surface-variant); }
+.md-label-large { font-size: 0.95rem; font-weight: 600; letter-spacing: 0.5px; }
+.md-label-small { font-size: 0.8rem; font-weight: 500; letter-spacing: 0.5px; color: var(--md-sys-color-outline); }
 
 /* ==========================================================================
-   4. COMPONENT STYLES
+   4. COMPONENT STYLES WITH 3D PERSPECTIVE
    ========================================================================== */
 
 /* Top App Bar */
 .md-top-app-bar {
-    background-color: rgba(20, 18, 16, 0.85);
-    backdrop-filter: blur(12px);
+    background-color: rgba(15, 13, 11, 0.75);
+    backdrop-filter: blur(20px);
     position: fixed;
     top: 0;
     left: 0;
     width: 100%;
     z-index: 1000;
-    border-bottom: 1px solid var(--md-sys-color-outline-variant);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.04);
 }
 
 .nav-wrapper {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    height: 64px;
+    height: 72px;
 }
 
 .md-app-bar-brand {
@@ -118,132 +155,89 @@ body {
     color: var(--md-sys-color-primary);
 }
 
-.md-app-bar-brand .icon-brand {
-    font-size: 28px;
-}
+.md-app-bar-brand .icon-brand { font-size: 32px; }
+.text-brand { font-family: var(--md-font-display); font-size: 1.3rem; font-weight: 700; color: #fff; }
 
 .md-app-bar-navigation {
     display: flex;
     align-items: center;
-    gap: 24px;
+    gap: 32px;
 }
 
 .md-nav-link {
     color: var(--md-sys-color-on-surface-variant);
     text-decoration: none;
-    font-size: 0.9rem;
+    font-size: 0.95rem;
     font-weight: 500;
-    display: inline-flex;
-    align-items: center;
-    gap: 6px;
-    transition: color 0.2s ease;
+    transition: color 0.3s;
 }
 
-.md-nav-link:hover {
-    color: var(--md-sys-color-primary);
-}
+.md-nav-link:hover { color: var(--md-sys-color-primary); }
 
 /* Hero Section */
 .md-hero {
-    padding: 140px 0 80px 0;
-    text-align: center;
-    background: radial-gradient(circle at top, rgba(255, 181, 137, 0.08), transparent 50%);
+    padding: 160px 0 100px 0;
+    display: flex;
+    justify-content: center;
 }
 
 .hero-wrapper {
     display: flex;
     flex-direction: column;
     align-items: center;
-    max-width: 720px;
+    text-align: center;
+    max-width: 840px;
 }
 
-.md-hero h1 {
-    margin-bottom: 16px;
-}
+.md-hero h1 { margin-bottom: 24px; }
+.md-hero h1 .text-primary { color: var(--md-sys-color-primary); }
+.md-hero p { margin-bottom: 40px; max-width: 680px; }
 
-.md-hero h1 .text-primary {
-    color: var(--md-sys-color-primary);
-}
-
-.md-hero p {
-    margin-bottom: 32px;
-}
-
-/* Suggestion Chip / Badge (Responsif terhadap penambahan teks VoIP & RoIP) */
+/* Suggestion Chip M3 */
 .md-chip {
     display: inline-flex;
     align-items: center;
-    gap: 8px;
-    background-color: var(--md-sys-color-surface-container);
-    border: 1px solid var(--md-sys-color-outline);
-    padding: 6px 16px;
-    border-radius: var(--md-shape-corner-small);
-    color: var(--md-sys-color-on-surface);
-    margin-bottom: 24px;
-}
-
-.md-icon-small {
-    font-size: 18px !important;
-}
-
-/* Material M3 Buttons */
-.md-button-group {
-    display: flex;
-    gap: 12px;
-    margin-bottom: 32px;
-}
-
-.md-btn {
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    gap: 8px;
-    font-family: var(--md-font-family);
-    font-size: 0.9rem;
-    font-weight: 500;
-    height: 40px;
-    padding: 0 24px;
+    gap: 10px;
+    background-color: rgba(255, 181, 137, 0.05);
+    border: 1px solid rgba(255, 181, 137, 0.2);
+    padding: 8px 20px;
     border-radius: var(--md-shape-corner-full);
-    text-decoration: none;
-    transition: box-shadow 0.2s, background-color 0.2s;
-    cursor: pointer;
+    margin-bottom: 32px;
+    transform: translateZ(20px); /* Dorong layer ke depan */
 }
 
-.md-btn-filled {
-    background-color: var(--md-sys-color-primary);
-    color: var(--md-sys-color-on-primary);
-    border: none;
+.md-icon-small { font-size: 18px !important; color: var(--md-sys-color-primary); }
+.text-chip { color: #fff; font-weight: 600; }
+
+/* 3D Address Box Container */
+.md-surface-container.scene-3d {
+    perspective: 800px;
+    margin-bottom: 40px;
 }
 
-.md-btn-filled:hover {
-    background-color: #ffc4a2;
-    box-shadow: 0 1px 3px rgba(0,0,0,0.3), 0 4px 8px rgba(0,0,0,0.15);
-}
-
-.md-btn-outlined {
-    background-color: transparent;
-    color: var(--md-sys-color-primary);
-    border: 1px solid var(--md-sys-color-outline);
-}
-
-.md-btn-outlined:hover {
-    background-color: rgba(255, 181, 137, 0.08);
-}
-
-/* Surface Container Box (Alamat Server) */
-.md-surface-container {
+.inner-container {
     display: inline-flex;
     align-items: center;
     background-color: var(--md-sys-color-surface-container-high);
-    padding: 8px 16px;
+    padding: 12px 24px;
     border-radius: var(--md-shape-corner-large);
-    gap: 12px;
+    gap: 16px;
+    border: 1px solid rgba(255, 255, 255, 0.05);
+    transform: rotateX(15deg); /* Efek Isometrik Statis Awal */
+    box-shadow: 0 20px 40px rgba(0,0,0,0.4);
+    transition: transform 0.4s ease, border-color 0.4s;
+}
+
+.inner-container:hover {
+    transform: rotateX(0deg) scale(1.05);
+    border-color: var(--md-sys-color-primary);
 }
 
 .md-surface-container code {
     font-family: monospace;
-    font-size: 0.95rem;
-    color: var(--md-sys-color-on-surface);
+    font-size: 1.1rem;
+    color: #fff;
+    letter-spacing: 0.5px;
 }
 
 .md-icon-button {
@@ -254,68 +248,214 @@ body {
     display: flex;
     align-items: center;
     justify-content: center;
-    width: 32px;
-    height: 32px;
+    width: 36px;
+    height: 36px;
     border-radius: var(--md-shape-corner-full);
-    transition: background-color 0.2s;
+    transition: background-color 0.2s, color 0.2s;
 }
 
 .md-icon-button:hover {
-    background-color: rgba(255, 255, 255, 0.08);
+    background-color: rgba(255, 255, 255, 0.06);
     color: var(--md-sys-color-primary);
 }
 
-/* Material Cards Architecture */
+/* Material M3 Buttons */
+.md-button-group {
+    display: flex;
+    gap: 16px;
+}
+
+.md-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    font-family: var(--md-font-body);
+    font-size: 0.95rem;
+    font-weight: 600;
+    height: 48px;
+    padding: 0 32px;
+    border-radius: var(--md-shape-corner-full);
+    text-decoration: none;
+    transition: background-color 0.3s, transform 0.2s, box-shadow 0.3s;
+}
+
+.md-btn-filled {
+    background-color: var(--md-sys-color-primary);
+    color: var(--md-sys-color-on-primary);
+    box-shadow: 0 4px 14px rgba(255, 181, 137, 0.3);
+}
+
+.md-btn-filled:hover {
+    background-color: #ffc4a2;
+    transform: translateY(-2px);
+    box-shadow: 0 8px 24px rgba(255, 181, 137, 0.4);
+}
+
+.md-btn-outlined {
+    background-color: transparent;
+    color: var(--md-sys-color-primary);
+    border: 1px solid var(--md-sys-color-outline);
+}
+
+.md-btn-outlined:hover {
+    background-color: rgba(255, 181, 137, 0.06);
+    transform: translateY(-2px);
+}
+
+/* Material 3D Grid Card Architecture */
 .md-card {
     border-radius: var(--md-shape-corner-extra-large);
-    padding: 24px;
+    padding: 32px;
     display: flex;
     flex-direction: column;
-}
-
-.md-card-elevated {
     background-color: var(--md-sys-color-surface-container-high);
-    box-shadow: 0 1px 3px rgba(0,0,0,0.2);
-    border: 1px solid rgba(255,255,255,0.02);
-}
-
-.md-card-tonal {
-    background-color: var(--md-sys-color-surface-container-high);
-    border: none;
+    border: 1px solid rgba(255, 255, 255, 0.03);
+    transform-style: preserve-3d; /* Mengaktifkan sumbu Z internal */
+    transition: transform 0.1s ease, box-shadow 0.1s ease;
 }
 
 .md-card-icon-wrapper {
     background-color: var(--md-sys-color-primary-container);
     color: var(--md-sys-color-on-primary-container);
-    width: 48px;
-    height: 48px;
+    width: 56px;
+    height: 56px;
     border-radius: var(--md-shape-corner-large);
     display: flex;
     align-items: center;
     justify-content: center;
-    margin-bottom: 16px;
+    margin-bottom: 24px;
+    transform: translateZ(30px); /* Membuat ikon melayang di atas permukaan kartu */
 }
 
 .md-card h3 {
-    margin-bottom: 8px;
+    margin-bottom: 12px;
+    transform: translateZ(20px);
 }
 
-/* Status Panel */
+.md-card p {
+    transform: translateZ(10px);
+}
+
+/* Glassmorphism 3D Status Panel */
 .md-status-panel {
-    background-color: var(--md-sys-color-surface-container-high);
-    border: 1px solid var(--md-sys-color-outline-variant);
+    background: rgba(38, 35, 32, 0.6);
+    backdrop-filter: blur(16px);
+    border: 1px solid rgba(255, 255, 255, 0.06);
     border-radius: var(--md-shape-corner-extra-large);
-    max-width: 680px;
+    max-width: 760px;
     margin: 0 auto;
-    padding: 24px;
+    padding: 36px;
+    transform-style: preserve-3d;
+    transition: transform 0.1s ease;
 }
 
 .md-status-header {
     display: flex;
     align-items: center;
-    gap: 8px;
-    margin-bottom: 24px;
+    gap: 12px;
+    margin-bottom: 32px;
 }
 
 .md-indicator-dot {
-    width:
+    width: 12px;
+    height: 12px;
+    border-radius: var(--md-shape-corner-full);
+}
+
+.md-indicator-dot.online {
+    background-color: var(--md-sys-color-success);
+    box-shadow: 0 0 12px var(--md-sys-color-success);
+}
+
+.md-status-metrics {
+    display: flex;
+    justify-content: space-around;
+    background-color: rgba(0, 0, 0, 0.2);
+    padding: 24px;
+    border-radius: var(--md-shape-corner-large);
+    margin-bottom: 32px;
+    transform: translateZ(25px);
+}
+
+.md-metric-item text-primary { color: var(--md-sys-color-primary); }
+.text-success { color: var(--md-sys-color-success); }
+
+/* Material Lists */
+.md-list {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    transform: translateZ(15px);
+}
+
+.md-list-item {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    padding: 16px 20px;
+    background-color: rgba(255, 255, 255, 0.02);
+    border-radius: var(--md-shape-corner-medium);
+    border: 1px solid rgba(255, 255, 255, 0.02);
+}
+
+.md-list-icon { color: var(--md-sys-color-primary); }
+.md-list-text { flex-grow: 1; font-weight: 500; }
+.md-badge-count {
+    background-color: rgba(129, 216, 149, 0.15);
+    color: var(--md-sys-color-success);
+    padding: 6px 16px;
+    border-radius: var(--md-shape-corner-full);
+    font-size: 0.8rem;
+    font-weight: 600;
+}
+
+/* Footer */
+.md-footer {
+    padding: 40px 0;
+    text-align: center;
+    background-color: #0b0908;
+    border-top: 1px solid rgba(255, 255, 255, 0.03);
+}
+
+/* Utilities Animations */
+.animate-pulse {
+    animation: pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+}
+
+@keyframes pulse {
+    0%, 100% { opacity: 1; transform: scale(1); }
+    50% { opacity: .5; transform: scale(0.92); }
+}
+
+/* ==========================================================================
+   5. RESPONSIVE DESIGN (MOBILE OPTIMIZATION)
+   ========================================================================== */
+@media (max-width: 768px) {
+    .md-app-bar-navigation { display: none; } /* Sembunyikan navigasi atas di mobile */
+    .md-display-large { font-size: 2.3rem; }
+    .md-headline-large { font-size: 1.8rem; }
+    .md-section { padding: 60px 0; }
+    
+    .md-button-group {
+        flex-direction: column;
+        width: 100%;
+    }
+    .md-btn { width: 100%; }
+    
+    .inner-container {
+        flex-direction: column;
+        gap: 12px;
+        width: 100%;
+        transform: none !important; /* Nonaktifkan 3D ekstrem di mobile demi performa */
+    }
+    
+    .md-status-metrics {
+        flex-direction: column;
+        gap: 24px;
+        text-align: center;
+    }
+    
+    .md-card, .md-status-panel {
+        transform: none !important; /* Matikan efek tilt kursor pada layar sentuh */
+    }
+}

@@ -169,8 +169,8 @@ section {
   font-weight: 500;
   border-radius: 4px;
   text-decoration: none;
-  position: relative;
-  overflow: hidden;
+  position: relative;   /* wajib untuk ripple */
+  overflow: hidden;     /* wajib untuk ripple */
 }
 
 .btn.secondary {
@@ -193,13 +193,16 @@ section {
   border-radius: 50%;
   width: 100px;
   height: 100px;
-  transform: scale(0);
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%) scale(0);
   opacity: 0;
   transition: transform 0.5s, opacity 1s;
+  pointer-events: none;
 }
 
 .btn:active::after {
-  transform: scale(2);
+  transform: translate(-50%, -50%) scale(2);
   opacity: 1;
   transition: 0s;
 }

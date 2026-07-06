@@ -3,164 +3,208 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Landing Page Komunitas Briker TeamSpeak - Server Ngopi Indonesia. Tempat berkumpul dan berkomunikasi berbasis VoIP.">
+    <meta name="description" content="Landing Page Komunitas Briker TeamSpeak - Server Ngopi Indonesia.">
     <title>Server Ngopi Indonesia | Komunitas Briker TeamSpeak</title>
     
     <!-- Link CSS Utama -->
     <link rel="stylesheet" href="style.css">
     
-    <!-- Google Fonts (Menggunakan font modern & tegas) -->
+    <!-- Google Fonts: Roboto (Font Standar Material Design) -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&family=Space+Grotesk:wght@500;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
     
-    <!-- Font Awesome Icons -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Material Symbols Outlined (Ikon Resmi Google Material) -->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
 </head>
 <body>
 
-    <!-- NAVBAR (Navigasi Atas) -->
-    <nav class="navbar">
-        <div class="container nav-container">
-            <a href="#" class="logo"><i class="fa-solid fa-mug-hot"></i> Ngopi ID</a>
-            <ul class="nav-links">
-                <li><a href="#tentang">Tentang</a></li>
-                <li><a href="#status">Status Server</a></li>
-                <li><a href="#panduan">Panduan</a></li>
-                <li><a href="https://github.com/USERNAME/REPO-ANDA" target="_blank" class="nav-github"><i class="fa-brands fa-github"></i> GitHub</a></li>
-            </ul>
-        </div>
-    </nav>
-
-    <!-- HERO SECTION (Bagian Utama) -->
-    <header class="hero">
-        <div class="container hero-content">
-            <div class="badge">📡 KOMUNITAS VOIP INDONESIA</div>
-            <h1>Server Ngopi<br><span>Indonesia</span></h1>
-            <p>Gabung bersama komunitas Briker dan pengguna TeamSpeak 3 terbesar di Indonesia. Jalin silaturahmi, diskusi teknologi, atau sekadar ngobrol santai ditemani secangkir kopi.</p>
-            
-            <div class="hero-action">
-                <!-- Ganti ALAMAT_SERVER_TS dengan IP atau Domain TS Anda -->
-                <a href="ts3server://ALAMAT_SERVER_TS?port=9987" class="btn btn-primary">
-                    <i class="fa-solid fa-headset"></i> Connect Server TS3
+    <!-- 1. MATERIAL TOP APP BAR -->
+    <header class="md-top-app-bar">
+        <div class="md-container nav-wrapper">
+            <div class="md-app-bar-brand">
+                <span class="material-symbols-outlined icon-brand">coffee</span>
+                <span class="md-title-large">Ngopi ID</span>
+            </div>
+            <nav class="md-app-bar-navigation">
+                <a href="#tentang" class="md-nav-link">Tentang</a>
+                <a href="#status" class="md-nav-link">Status Server</a>
+                <a href="#panduan" class="md-nav-link">Panduan</a>
+                <a href="https://github.com/USERNAME/REPO-ANDA" target="_blank" class="md-nav-link md-nav-icon">
+                    <span class="material-symbols-outlined">code</span> GitHub
                 </a>
-                <a href="#panduan" class="btn btn-secondary">Cara Join</a>
-            </div>
-            
-            <!-- Info Cepat Alamat Server -->
-            <div class="server-address">
-                <code>Address: ngopi.tsdns.my.id</code>
-                <button onclick="navigator.clipboard.writeText('ts.ngopi-indonesia.com'); alert('Alamat server disalin!')" title="Salin Alamat">
-                    <i class="fa-regular fa-copy"></i>
-                </button>
-            </div>
+            </nav>
         </div>
     </header>
 
-    <!-- TENTANG & FITUR -->
-    <section id="tentang" class="section">
-        <div class="container">
-            <div class="section-header">
-                <h2>Kenapa Memilih Server Ngopi?</h2>
-                <p>Kami mengintegrasikan budaya komunikasi radio (Briker style) dengan teknologi modern.</p>
+    <!-- 2. HERO SECTION -->
+    <section class="md-hero">
+        <div class="md-container hero-wrapper">
+            <!-- Material Badge/Suggestion Chip -->
+            <div class="md-chip">
+                <span class="material-symbols-outlined md-icon-small">settings_input_antenna</span>
+                <span class="md-label-large">Komunitas VoIP Indonesia</span>
             </div>
             
-            <div class="grid-features">
-                <div class="card">
-                    <div class="card-icon"><i class="fa-solid fa-gauge-high"></i></div>
-                    <h3>Low Latency</h3>
-                    <p>Server dihosting di datacenter Indonesia (IIX) untuk memastikan suara jernih tanpa delay.</p>
+            <h1 class="md-display-large">Server Ngopi<br><span class="text-primary">Indonesia</span></h1>
+            <p class="md-body-large">Gabung bersama komunitas Briker dan pengguna TeamSpeak 3 terbesar di Indonesia. Jalin silaturahmi, diskusi teknologi, atau sekadar ngobrol santai ditemani secangkir kopi.</p>
+            
+            <!-- Material M3 Buttons Layout -->
+            <div class="md-button-group">
+                <!-- Filled Button (Aksi Utama) -->
+                <a href="ts3server://ALAMAT_SERVER_TS?port=9987" class="md-btn md-btn-filled">
+                    <span class="material-symbols-outlined">headset</span>
+                    Connect Server TS3
+                </a>
+                <!-- Outlined Button (Aksi Sekunder) -->
+                <a href="#panduan" class="md-btn md-btn-outlined">
+                    Cara Join
+                </a>
+            </div>
+            
+            <!-- Alamat Server (Material Surface Container) -->
+            <div class="md-surface-container">
+                <span class="material-symbols-outlined text-primary">dns</span>
+                <code class="md-body-medium">ts.ngopi-indonesia.com</code>
+                <button class="md-icon-button" onclick="navigator.clipboard.writeText('ts.ngopi-indonesia.com'); alert('Alamat server disalin!')" title="Salin Alamat">
+                    <span class="material-symbols-outlined">content_copy</span>
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <!-- 3. TENTANG & FITUR (Material Cards) -->
+    <section id="tentang" class="md-section">
+        <div class="md-container">
+            <div class="md-section-header">
+                <h2 class="md-headline-large">Kenapa Memilih Server Ngopi?</h2>
+                <p class="md-body-medium">Kami mengintegrasikan budaya komunikasi radio (Briker style) dengan teknologi modern.</p>
+            </div>
+            
+            <div class="md-grid">
+                <!-- Card 1: Elevated Card -->
+                <div class="md-card md-card-elevated">
+                    <div class="md-card-icon-wrapper">
+                        <span class="material-symbols-outlined">speed</span>
+                    </div>
+                    <h3 class="md-title-large">Low Latency</h3>
+                    <p class="md-body-medium">Server dihosting di datacenter Indonesia (IIX) untuk memastikan suara jernih tanpa delay.</p>
                 </div>
-                <div class="card">
-                    <div class="card-icon"><i class="fa-solid fa-shield-halved"></i></div>
-                    <h3>Anti-DDoS & Aman</h3>
-                    <p>Perlindungan jaringan berlapis agar sesi "ngopi" dan mengobrol Anda tidak terganggu.</p>
+
+                <!-- Card 2: Elevated Card -->
+                <div class="md-card md-card-elevated">
+                    <div class="md-card-icon-wrapper">
+                        <span class="material-symbols-outlined">shield</span>
+                    </div>
+                    <h3 class="md-title-large">Anti-DDoS & Aman</h3>
+                    <p class="md-body-medium">Perlindungan jaringan berlapis agar sesi "ngopi" dan mengobrol Anda tidak terganggu.</p>
                 </div>
-                <div class="card">
-                    <div class="card-icon"><i class="fa-solid fa-comments"></i></div>
-                    <h3>Room Terstruktur</h3>
-                    <p>Mulai dari Room Utama (Warung Kopi), Room Teknis Briker, hingga Room Komunitas Radio Pasundan.</p>
+
+                <!-- Card 3: Elevated Card -->
+                <div class="md-card md-card-elevated">
+                    <div class="md-card-icon-wrapper">
+                        <span class="material-symbols-outlined">forum</span>
+                    </div>
+                    <h3 class="md-title-large">Room Terstruktur</h3>
+                    <p class="md-body-medium">Mulai dari Room Utama (Warung Kopi), Room Teknis Briker, hingga Room Komunitas Radio Pasundan.</p>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- STATUS SERVER (Live/Placeholder Widget) -->
-    <section id="status" class="section section-alt">
-        <div class="container">
-            <div class="section-header">
-                <h2>Status Server Saat Ini</h2>
-                <p>Pantau langsung aktivitas room sebelum Anda masuk.</p>
+    <!-- 4. STATUS SERVER -->
+    <section id="status" class="md-section md-section-tonal">
+        <div class="md-container">
+            <div class="md-section-header">
+                <h2 class="md-headline-large">Status Server Saat Ini</h2>
+                <p class="md-body-medium">Pantau langsung aktivitas room sebelum Anda masuk.</p>
             </div>
             
-            <div class="status-box">
-                <div class="status-header">
-                    <span class="status-indicator online"></span>
-                    <h3>Server Online</h3>
+            <!-- Material Outlined Card Besar -->
+            <div class="md-status-panel md-card-outlined">
+                <div class="md-status-header">
+                    <span class="md-indicator-dot online animate-pulse"></span>
+                    <span class="md-title-medium">Server Online</span>
                 </div>
                 
-                <!-- Jika Anda punya TS3 Web Viewer widget (seperti dari TSViewer.com / GameTracker), pasang di sini. 
-                     Sebagai alternatif, ini adalah layout tampilan statis/placeholder yang rapi -->
-                <div class="status-details">
-                    <div class="stat-item">
-                        <span class="stat-num">42</span>
-                        <span class="stat-label">User Online</span>
+                <div class="md-status-metrics">
+                    <div class="md-metric-item">
+                        <span class="md-display-medium text-primary">42</span>
+                        <span class="md-label-medium">User Online</span>
                     </div>
-                    <div class="stat-item">
-                        <span class="stat-num">12</span>
-                        <span class="stat-label">Active Rooms</span>
+                    <div class="md-metric-item">
+                        <span class="md-display-medium text-primary">12</span>
+                        <span class="md-label-medium">Active Rooms</span>
                     </div>
-                    <div class="stat-item">
-                        <span class="stat-num">99.9%</span>
-                        <span class="stat-label">Uptime</span>
+                    <div class="md-metric-item">
+                        <span class="md-display-medium text-primary">99.9%</span>
+                        <span class="md-label-medium">Uptime</span>
                     </div>
                 </div>
                 
-                <div class="active-channels">
-                    <h4><i class="fa-solid fa-folder-open"></i> Channel Populer Hari Ini:</h4>
-                    <ul>
-                        <li><i class="fa-solid fa-volume-high"></i> [01] LOBBY UTAMA - WARUNG KOPI <span>(15 Users)</span></li>
-                        <li><i class="fa-solid fa-microphone-lines"></i> [02] BRICKER REGIONAL JABODETABEK <span>(8 Users)</span></li>
-                        <li><i class="fa-solid fa-gears"></i> [03] NGREKSO / OPREK SERVER <span>(4 Users)</span></li>
+                <!-- Material List Component -->
+                <div class="md-list-container">
+                    <h4 class="md-title-small">Channel Populer Hari Ini</h4>
+                    <ul class="md-list">
+                        <li class="md-list-item">
+                            <span class="material-symbols-outlined md-list-icon">volume_up</span>
+                            <div class="md-list-text">[01] LOBBY UTAMA - WARUNG KOPI</div>
+                            <span class="md-badge-count">15 Users</span>
+                        </li>
+                        <li class="md-list-item">
+                            <span class="material-symbols-outlined md-list-icon">graphic_eq</span>
+                            <div class="md-list-text">[02] BRICKER REGIONAL JABODETABEK</div>
+                            <span class="md-badge-count">8 Users</span>
+                        </li>
+                        <li class="md-list-item">
+                            <span class="material-symbols-outlined md-list-icon">build</span>
+                            <div class="md-list-text">[03] NGREKSO / OPREK SERVER</div>
+                            <span class="md-badge-count">4 Users</span>
+                        </li>
                     </ul>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- PANDUAN JOIN -->
-    <section id="panduan" class="section">
-        <div class="container">
-            <div class="section-header">
-                <h2>Cara Bergabung</h2>
-                <p>Ikuti 3 langkah mudah berikut untuk mulai mengobrol bersama kami.</p>
+    <!-- 5. PANDUAN JOIN -->
+    <section id="panduan" class="md-section">
+        <div class="md-container">
+            <div class="md-section-header">
+                <h2 class="md-headline-large">Cara Bergabung</h2>
+                <p class="md-body-medium">Ikuti 3 langkah mudah berikut untuk mulai mengobrol bersama kami.</p>
             </div>
             
-            <div class="steps-container">
-                <div class="step">
-                    <div class="step-num">1</div>
-                    <h3>Download Client</h3>
-                    <p>Unduh dan instal aplikasi TeamSpeak 3 Client sesuai dengan perangkat Anda (PC/Android/iOS).</p>
+            <div class="md-grid">
+                <!-- Step 1: Material Card Tonal -->
+                <div class="md-card md-card-tonal">
+                    <div class="md-step-badge">1</div>
+                    <h3 class="md-title-large">Download Client</h3>
+                    <p class="md-body-medium">Unduh dan instal aplikasi TeamSpeak 3 Client sesuai dengan perangkat Anda (PC/Android/iOS).</p>
                 </div>
-                <div class="step">
-                    <div class="step-num">2</div>
-                    <h3>Masukkan Alamat</h3>
-                    <p>Buka TeamSpeak, klik menu <strong>Connections > Connect</strong>, lalu masukkan alamat server kami.</p>
+
+                <!-- Step 2: Material Card Tonal -->
+                <div class="md-card md-card-tonal">
+                    <div class="md-step-badge">2</div>
+                    <h3 class="md-title-large">Masukkan Alamat</h3>
+                    <p class="md-body-medium">Buka TeamSpeak, klik menu <strong>Connections > Connect</strong>, lalu masukkan alamat server kami.</p>
                 </div>
-                <div class="step">
-                    <div class="step-num">3</div>
-                    <h3>Gunakan Nickname</h3>
-                    <p>Gunakan format nama panggilan Anda (contoh: <code>Budi_Jakarta</code>) untuk memudahkan menyapa.</p>
+
+                <!-- Step 3: Material Card Tonal -->
+                <div class="md-card md-card-tonal">
+                    <div class="md-step-badge">3</div>
+                    <h3 class="md-title-large">Gunakan Nickname</h3>
+                    <p class="md-body-medium">Gunakan format nama panggilan Anda (contoh: <code>Budi_Jakarta</code>) untuk memudahkan menyapa.</p>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- FOOTER -->
-    <footer class="footer">
-        <div class="container footer-content">
-            <p>&copy; 2026 <strong>Server Ngopi Indonesia</strong>. All Rights Reserved.</p>
-            <p class="footer-sub">Dikelola secara swadaya oleh Komunitas Briker TeamSpeak Indonesia.</p>
+    <!-- 6. FOOTER -->
+    <footer class="md-footer">
+        <div class="md-container">
+            <p class="md-body-medium">© 2026 <strong>Server Ngopi Indonesia</strong>.</p>
+            <p class="md-label-small">Dikelola secara swadaya oleh Komunitas Briker TeamSpeak Indonesia.</p>
         </div>
     </footer>
 

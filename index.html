@@ -14,20 +14,29 @@
     <h1>Server Ngopi Indonesia</h1>
   </header>
 
-  <!-- Navigasi melayang -->
+  <!-- Sidebar Navigasi (desktop) -->
   <nav class="sidebar">
     <ul>
-      <li><a href="#join" title="Join ke Server"><i class="fas fa-headset"></i><span>Join ke Server</span></a></li>
-      <li><a href="#alamat" title="Alamat Server"><i class="fas fa-server"></i><span>Alamat Server</span></a></li>
-      <li><a href="#channel" title="Free Channel"><i class="fas fa-comments"></i><span>Free Channel</span></a></li>
-      <li><a href="#pribadi" title="Server Pribadi"><i class="fas fa-cogs"></i><span>Server Pribadi</span></a></li>
+      <li><a href="#join"><i class="fas fa-headset"></i><span>Join ke Server</span></a></li>
+      <li><a href="#alamat"><i class="fas fa-server"></i><span>Alamat Server</span></a></li>
+      <li><a href="#channel"><i class="fas fa-comments"></i><span>Free Channel</span></a></li>
+      <li><a href="#pribadi"><i class="fas fa-cogs"></i><span>Server Pribadi</span></a></li>
     </ul>
+  </nav>
+
+  <!-- Floating menu (mobile) -->
+  <nav class="floating-menu">
+    <a href="#join" title="Join"><i class="fas fa-headset"></i></a>
+    <a href="#alamat" title="Alamat"><i class="fas fa-server"></i></a>
+    <a href="#channel" title="Channel"><i class="fas fa-comments"></i></a>
+    <a href="#pribadi" title="Pribadi"><i class="fas fa-cogs"></i></a>
   </nav>
 
   <!-- Section Join -->
   <section id="join">
     <h2><i class="fas fa-headset"></i> Join ke Server Ngopi Indonesia</h2>
-    <p>Klik untuk bergabung dengan komunitas Teamspeak kami.</p>
+    <p>Klik tombol di bawah untuk bergabung dengan server kami.</p>
+    <a class="btn" href="http://serverngopi.tsdns.my.id" target="_blank">Join Now</a>
   </section>
 
   <!-- Section Alamat -->
@@ -40,17 +49,44 @@
   <section id="channel">
     <h2><i class="fas fa-comments"></i> Free Channel</h2>
     <p>Hubungi WA admin untuk mendapatkan free channel di server Ngopi Indonesia.</p>
+    <a class="btn" href="http://wa.me/082177580386" target="_blank">WhatsApp Admin</a>
   </section>
 
   <!-- Section Server Pribadi -->
   <section id="pribadi">
     <h2><i class="fas fa-cogs"></i> Miliki Server Teamspeak Pribadi</h2>
-    <p>Hubungi WA admin untuk informasi lebih lanjut.</p>
+    <p>Hubungi WA admin untuk informasi lebih lanjut atau bergabung dengan grup.</p>
+    <a class="btn" href="http://wa.me/082177580386" target="_blank">WhatsApp Admin</a>
+    <a class="btn" href="https://chat.whatsapp.com/HTBOC3uEc4YKNsVY87ORXH" target="_blank">WhatsApp Group</a>
   </section>
 
   <!-- Footer -->
   <footer>
     <p>&copy; 2026 Server Ngopi Indonesia</p>
   </footer>
+
+  <!-- Script highlight aktif -->
+  <script>
+    const navLinks = document.querySelectorAll('.sidebar a');
+    const sections = document.querySelectorAll('section');
+
+    window.addEventListener('scroll', () => {
+      let current = "";
+      sections.forEach(section => {
+        const sectionTop = section.offsetTop - 120;
+        const sectionHeight = section.clientHeight;
+        if (pageYOffset >= sectionTop && pageYOffset < sectionTop + sectionHeight) {
+          current = section.getAttribute("id");
+        }
+      });
+
+      navLinks.forEach(link => {
+        link.classList.remove("active");
+        if (link.getAttribute("href") === "#" + current) {
+          link.classList.add("active");
+        }
+      });
+    });
+  </script>
 </body>
 </html>

@@ -64,7 +64,7 @@ section {
 
 .card {
   background: #fff;
-  margin: 40px auto 20px auto; /* lebih rapat */
+  margin: 40px auto 20px auto;
   padding: 15px;
   border-radius: 8px;
   box-shadow: 0 2px 8px rgba(0,0,0,0.1);
@@ -83,7 +83,7 @@ section {
 
 .card p {
   font-size: 1.05em;
-  margin: 8px 0; /* rapat antar paragraf */
+  margin: 8px 0;
 }
 
 /* Paket sewa server */
@@ -189,11 +189,12 @@ section {
   transition: 0s;
 }
 
-/* Audio Player ringan */
-audio {
-  outline: none;
-  border-radius: 6px;
-  box-shadow: 0 1px 4px rgba(0,0,0,0.1);
+/* Fallback tombol Play Backsound */
+#playButton {
+  font-size: 0.9em;
+  padding: 8px 14px;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.2);
+  cursor: pointer;
 }
 
 /* Footer */

@@ -24,17 +24,12 @@
     <p>Bergabunglah sekarang untuk menikmati suasana komunitas yang hangat.  
     Dukung keberlangsungan server dengan donasi agar tetap online dan terus berkembang.</p>
     
-    <!-- Tombol Join Server -->
     <a class="btn" href="http://serverngopi.tsdns.my.id" target="_blank">
       <i class="fas fa-sign-in-alt"></i> Gabung Server
     </a>
-    
-    <!-- Tombol Donasi -->
     <a class="btn secondary" href="https://link.dana.id/minta?full_url=https://qr.dana.id/v1/281012012019040631708966" target="_blank">
       <i class="fas fa-donate"></i> Donasi Sekarang
     </a>
-
-    <!-- Tombol Join Grup WhatsApp -->
     <a class="btn whatsapp" href="https://chat.whatsapp.com/HTBOC3uEc4YKNsVY87ORXH" target="_blank">
       <i class="fab fa-whatsapp"></i> Join Grup WhatsApp
     </a>
@@ -92,17 +87,19 @@
   <!-- Pemutar Audio Streaming Floating -->
   <div class="audio-floating" id="audioBox">
     <div class="audio-header">
-      <h3 id="song-title">Ngopi FM</h3>
+      <h3 id="song-title">Ngopi FM Live</h3>
       <button id="toggleBtn"><i class="fas fa-minus"></i></button>
     </div>
-    <audio id="player" controls autoplay>
-      <source src="https://stream.denger.in/dmi" type="audio/mpeg">
-      Browser Anda tidak mendukung audio HTML5.
-    </audio>
+    <div id="audioContainer">
+      <audio id="player" controls autoplay>
+        <source src="https://stream.denger.in/dmi" type="audio/mpeg">
+        Browser Anda tidak mendukung audio HTML5.
+      </audio>
+    </div>
   </div>
 
   <script>
-    // Update judul lagu otomatis
+    // Update judul lagu otomatis dengan fallback
     async function updateSongTitle() {
       try {
         let response = await fetch("https://stream.denger.in/status-json.xsl");
@@ -110,7 +107,7 @@
         let title = data.icestats.source[0].title;
         document.getElementById("song-title").innerText = "Sedang Diputar: " + title;
       } catch (e) {
-        console.error("Gagal ambil metadata", e);
+        document.getElementById("song-title").innerText = "Ngopi FM Live";
       }
     }
     setInterval(updateSongTitle, 10000);
@@ -118,14 +115,14 @@
 
     // Toggle minimize/maximize
     const toggleBtn = document.getElementById("toggleBtn");
-    const player = document.getElementById("player");
+    const audioContainer = document.getElementById("audioContainer");
 
     toggleBtn.addEventListener("click", () => {
-      if (player.style.display === "none") {
-        player.style.display = "block";
+      if (audioContainer.style.display === "none") {
+        audioContainer.style.display = "block";
         toggleBtn.innerHTML = '<i class="fas fa-minus"></i>';
       } else {
-        player.style.display = "none";
+        audioContainer.style.display = "none";
         toggleBtn.innerHTML = '<i class="fas fa-plus"></i>';
       }
     });

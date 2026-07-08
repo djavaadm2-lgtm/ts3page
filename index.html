@@ -15,26 +15,18 @@
     <h1>SERVER NGOPI INDONESIA</h1>
   </header>
 
-  <!-- Floating vertical menu -->
-  <nav class="floating-menu">
-    <a href="#utama" title="Utama"><i class="fas fa-home"></i></a>
-    <a href="#channel" title="Channel"><i class="fas fa-comments"></i></a>
-    <a href="#sewa" title="Sewa"><i class="fas fa-cogs"></i></a>
-  </nav>
-
   <!-- Section Utama -->
   <section id="utama" class="card">
     <h2><i class="fas fa-home"></i> Informasi Utama</h2>
-    <p>Selamat datang di <strong>SERVER NGOPI INDONESIA</strong></p>
-    <p>Tempat berkumpulnya komunitas Voip & Roip ngobrol santai dan silaturahim.</p>  
-    <p>Kami menyediakan server Teamspeak yang stabil dan ramah untuk semua pengguna.</p>
+    <p>Selamat datang di <strong>SERVER NGOPI INDONESIA</strong>, komunitas VoIP & RoIP untuk ngobrol santai sekaligus menjalin silaturahim.</p>
+    <p>Kami menyediakan server Teamspeak yang stabil, cepat, dan ramah untuk semua pengguna.</p>
     <p><strong>Alamat Server:</strong> ngopi.tsdns.my.id</p>
-    <p>Silakan bergabung ke server kami untuk menikmati suasana komunitas yang hangat.</p>  
-    <p>Jika Anda ingin mendukung keberlangsungan server, Anda juga bisa berdonasi.</p>
+    <p>Bergabunglah sekarang untuk menikmati suasana komunitas yang hangat.  
+    Dukung keberlangsungan server dengan donasi agar tetap online dan terus berkembang.</p>
     
     <!-- Tombol Join Server -->
     <a class="btn" href="http://serverngopi.tsdns.my.id" target="_blank">
-      <i class="fas fa-sign-in-alt"></i> Join Now
+      <i class="fas fa-sign-in-alt"></i> Gabung Server
     </a>
     
     <!-- Tombol Donasi -->
@@ -47,81 +39,15 @@
       <i class="fab fa-whatsapp"></i> Join Grup WhatsApp
     </a>
     <p><em>Unduh aplikasi Teamspeak dan aplikasi lain melalui deskripsi grup WhatsApp.</em></p>
-
-    <!-- Pemutar Audio Streaming -->
-   <section id="music-player">
-  <style>
-    .dmi-radio-box {
-        background: #1e1e1e;
-        color: #ffffff;
-        padding: 20px;
-        border-radius: 12px;
-        max-width: 320px;
-        text-align: center;
-        font-family: Arial, sans-serif;
-        box-shadow: 0 4px 15px rgba(0,0,0,0.3);
-    }
-    .dmi-status {
-        font-size: 11px;
-        text-transform: uppercase;
-        letter-spacing: 1px;
-        color: #bb86fc;
-        margin-bottom: 6px;
-    }
-    .dmi-title {
-        font-size: 15px;
-        font-weight: bold;
-        min-height: 40px;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        margin-bottom: 15px;
-        word-break: break-word;
-    }
-    .dmi-radio-box audio {
-        width: 100%;
-    }
-</style>
-
-<div class="dmi-radio-box">
-    <div class="dmi-status">● Sedang Diputar</div>
-    <div id="dmiSongTitle" class="dmi-title">Memuat judul...</div>
-    <audio controls autoplay>
-        <source src="https://stream.denger.in/dmi" type="audio/mpeg">
-        Browser Anda tidak mendukung player audio.
-    </audio>
-</div>
-
-</section>
-
-<script>
-    async function fetchDMITitle() {
-        try {
-            // Memanggil file proxy PHP yang sudah Anda buat
-            const res = await fetch('get_title.php');
-            const data = await res.json();
-            document.getElementById('dmiSongTitle').textContent = data.title || "Live Stream DMI";
-        } catch (e) {
-            document.getElementById('dmiSongTitle').textContent = "Live Stream DMI";
-        }
-    }
-
-    // Panggil saat halaman dibuka
-    fetchDMITitle();
-
-    // Perbarui judul otomatis setiap 10 detik
-    setInterval(fetchDMITitle, 10000);
-</script>
-
-    
   </section>
 
   <!-- Section Free Channel -->
   <section id="channel" class="card">
     <h2><i class="fas fa-comments"></i> Free Channel</h2>
-    <p>Hubungi WA admin untuk mendapatkan free channel pribadi di server.</p>
-    <a class="btn" href="https://wa.me/6282177580386" target="_blank">
-      <i class="fab fa-whatsapp"></i> WhatsApp Admin
+    <p>Ingin punya channel pribadi di server?  
+    Hubungi admin melalui WhatsApp, dan kami akan menyiapkan channel gratis untukmu.</p>
+    <a class="btn whatsapp" href="https://wa.me/6282177580386" target="_blank">
+      <i class="fab fa-whatsapp"></i> Hubungi Admin
     </a>
   </section>
 
@@ -132,27 +58,28 @@
     <div class="paket hemat">
       <span class="badge">Hemat</span>
       <h3><i class="fas fa-microphone"></i> Paket 1 Bulan - Rp 25.000</h3>
-      <p>Slot 256, gratis subdomain <em>xxx.tsdns.my.id</em>, port random.</p>
-      <a class="btn" href="https://wa.me/6282177580386?text=Saya%20ingin%20sewa%20server%201%20bulan%20Rp25.000%20slot%20256%20port%20random" target="_blank">
-        <i class="fab fa-whatsapp"></i> Chat Admin
+      <p>Cocok untuk pemula!  
+      Dapatkan 256 slot, subdomain gratis <em>xxx.tsdns.my.id</em>, dan port random.</p>
+      <a class="btn whatsapp" href="https://wa.me/6282177580386?text=Saya%20ingin%20sewa%20paket%20hemat%201%20bulan%20Rp25.000" target="_blank">
+        <i class="fab fa-whatsapp"></i> Pesan Paket Hemat
       </a>
     </div>
 
     <div class="paket standar">
       <span class="badge">Standar</span>
       <h3><i class="fas fa-server"></i> Paket 1 Bulan - Rp 35.000</h3>
-      <p>Slot 512, gratis subdomain <em>xxx.tsdns.my.id</em>, port pilihan.</p>
-      <a class="btn" href="https://wa.me/6282177580386?text=Saya%20ingin%20sewa%20server%201%20bulan%20Rp35.000%20slot%20512%20port%20pilihan" target="_blank">
-        <i class="fab fa-whatsapp"></i> Chat Admin
+      <p>Pilihan populer dengan 512 slot, subdomain gratis <em>xxx.tsdns.my.id</em>, dan port sesuai keinginan.</p>
+      <a class="btn whatsapp" href="https://wa.me/6282177580386?text=Saya%20ingin%20sewa%20paket%20standar%201%20bulan%20Rp35.000" target="_blank">
+        <i class="fab fa-whatsapp"></i> Pesan Paket Standar
       </a>
     </div>
 
     <div class="paket premium">
       <span class="badge">Premium</span>
       <h3><i class="fas fa-gem"></i> Paket 3 Bulan - Rp 75.000</h3>
-      <p>Slot 512, gratis subdomain <em>xxx.tsdns.my.id</em>, port pilihan, custom aplikasi Teamspeak.</p>
-      <a class="btn" href="https://wa.me/6282177580386?text=Saya%20ingin%20sewa%20server%203%20bulan%20Rp75.000%20slot%20512%20port%20pilihan%20+%20custom%20aplikasi" target="_blank">
-        <i class="fab fa-whatsapp"></i> Chat Admin
+      <p>Paket lengkap dengan 512 slot, subdomain gratis <em>xxx.tsdns.my.id</em>, port pilihan, dan custom aplikasi Teamspeak.</p>
+      <a class="btn whatsapp" href="https://wa.me/6282177580386?text=Saya%20ingin%20sewa%20paket%20premium%203%20bulan%20Rp75.000" target="_blank">
+        <i class="fab fa-whatsapp"></i> Pesan Paket Premium
       </a>
     </div>
   </section>
@@ -161,5 +88,47 @@
   <footer>
     <p>&copy; 2026 Server Ngopi Indonesia</p>
   </footer>
+
+  <!-- Pemutar Audio Streaming Floating -->
+  <div class="audio-floating" id="audioBox">
+    <div class="audio-header">
+      <h3 id="song-title">Ngopi FM</h3>
+      <button id="toggleBtn"><i class="fas fa-minus"></i></button>
+    </div>
+    <audio id="player" controls autoplay>
+      <source src="https://stream.denger.in/dmi" type="audio/mpeg">
+      Browser Anda tidak mendukung audio HTML5.
+    </audio>
+  </div>
+
+  <script>
+    // Update judul lagu otomatis
+    async function updateSongTitle() {
+      try {
+        let response = await fetch("https://stream.denger.in/status-json.xsl");
+        let data = await response.json();
+        let title = data.icestats.source[0].title;
+        document.getElementById("song-title").innerText = "Sedang Diputar: " + title;
+      } catch (e) {
+        console.error("Gagal ambil metadata", e);
+      }
+    }
+    setInterval(updateSongTitle, 10000);
+    updateSongTitle();
+
+    // Toggle minimize/maximize
+    const toggleBtn = document.getElementById("toggleBtn");
+    const player = document.getElementById("player");
+
+    toggleBtn.addEventListener("click", () => {
+      if (player.style.display === "none") {
+        player.style.display = "block";
+        toggleBtn.innerHTML = '<i class="fas fa-minus"></i>';
+      } else {
+        player.style.display = "none";
+        toggleBtn.innerHTML = '<i class="fas fa-plus"></i>';
+      }
+    });
+  </script>
 </body>
 </html>

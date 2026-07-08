@@ -1,4 +1,4 @@
-/* Material Design Style */
+/* Global Styles */
 html {
   scroll-behavior: smooth;
 }
@@ -10,7 +10,7 @@ body {
   color: #333;
 }
 
-/* Header */
+/* Header Styles */
 header {
   position: fixed;
   top: 0;
@@ -30,33 +30,6 @@ header h1 {
   font-weight: 500;
 }
 
-/* Floating vertical menu */
-.floating-menu {
-  display: flex;
-  flex-direction: column;
-  position: fixed;
-  bottom: 15px;
-  right: 15px;
-  z-index: 1000;
-}
-
-.floating-menu a {
-  background: #2196f3;
-  color: #fff;
-  padding: 12px;
-  margin: 5px 0;
-  border-radius: 50%;
-  text-align: center;
-  font-size: 1.2em;
-  box-shadow: 0 2px 6px rgba(0,0,0,0.3);
-  transition: transform 0.3s, background 0.3s;
-}
-
-.floating-menu a:hover {
-  background: #ff9800;
-  transform: scale(1.1);
-}
-
 /* Section Card Layout */
 section {
   scroll-margin-top: 90px;
@@ -64,8 +37,8 @@ section {
 
 .card {
   background: #fff;
-  margin: 40px auto 20px auto; /* lebih rapat */
-  padding: 15px;
+  margin: 60px auto 30px auto;
+  padding: 20px;
   border-radius: 8px;
   box-shadow: 0 2px 8px rgba(0,0,0,0.1);
   text-align: center;
@@ -74,23 +47,23 @@ section {
 
 .card h2 {
   color: #2196f3;
-  margin-bottom: 10px;
+  margin-bottom: 12px;
 }
 
 .card h2 i {
-  margin-right: 10px;
+  margin-right: 8px;
 }
 
 .card p {
   font-size: 1.05em;
-  margin: 8px 0; /* rapat antar paragraf */
+  margin: 8px 0;
 }
 
-/* Paket sewa server */
+/* Paket Sewa Server */
 .paket {
   background: #f9f9f9;
   margin: 15px 0;
-  padding: 12px;
+  padding: 15px;
   border-radius: 6px;
   box-shadow: 0 1px 4px rgba(0,0,0,0.1);
   text-align: left;
@@ -104,7 +77,7 @@ section {
 
 .paket h3 i {
   color: #ff9800;
-  margin-right: 8px;
+  margin-right: 6px;
 }
 
 /* Badge Paket */
@@ -119,19 +92,11 @@ section {
   font-weight: bold;
 }
 
-.paket.hemat .badge {
-  background: #4caf50;
-}
+.paket.hemat .badge { background: #4caf50; }
+.paket.standar .badge { background: #2196f3; }
+.paket.premium .badge { background: #ff9800; }
 
-.paket.standar .badge {
-  background: #2196f3;
-}
-
-.paket.premium .badge {
-  background: #ff9800;
-}
-
-/* Tombol Material */
+/* Buttons */
 .btn {
   display: inline-block;
   margin: 8px;
@@ -146,26 +111,12 @@ section {
   transition: background 0.3s;
 }
 
-.btn.secondary {
-  background: #ff9800;
-}
+.btn.secondary { background: #ff9800; }
+.btn.whatsapp { background: #25D366; }
+.btn:hover { background: #1976d2; }
+.btn.whatsapp:hover { background: #1ebe5d; }
 
-.btn:hover {
-  background: #1976d2;
-}
-
-.btn i {
-  margin-right: 6px;
-}
-
-/* Tombol khusus WhatsApp Group */
-.btn.whatsapp {
-  background: #25D366; /* hijau khas WhatsApp */
-}
-
-.btn.whatsapp:hover {
-  background: #1ebe5d;
-}
+.btn i { margin-right: 6px; }
 
 /* Ripple Effect */
 .btn::after {
@@ -179,7 +130,7 @@ section {
   left: 50%;
   transform: translate(-50%, -50%) scale(0);
   opacity: 0;
-  transition: transform 0.5s, opacity 1s;
+  transition: transform 0.4s ease, opacity 0.8s ease;
   pointer-events: none;
 }
 
@@ -189,19 +140,45 @@ section {
   transition: 0s;
 }
 
-/* Audio Player */
-.audio-player {
-  margin-top: 15px;
+/* Pemutar Audio Floating */
+.audio-floating {
+  position: fixed;
+  bottom: 15px;
+  right: 15px;
+  background: #fff;
+  border: 2px solid #2196f3;
+  border-radius: 8px;
   padding: 10px;
-  background: #f9f9f9;
-  border-radius: 6px;
-  box-shadow: 0 1px 4px rgba(0,0,0,0.1);
-  text-align: center;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.3);
+  z-index: 1000;
+  width: 260px;
+  transition: all 0.3s ease;
 }
 
-.audio-player h3 {
-  margin-bottom: 10px;
+.audio-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.audio-header h3 {
+  margin: 0;
+  font-size: 1em;
   color: #2196f3;
+}
+
+.audio-header button {
+  background: none;
+  border: none;
+  color: #2196f3;
+  font-size: 1.2em;
+  cursor: pointer;
+}
+
+.audio-floating audio {
+  width: 100%;
+  margin-top: 8px;
+  transition: all 0.3s ease;
 }
 
 /* Footer */

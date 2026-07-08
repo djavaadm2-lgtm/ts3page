@@ -49,12 +49,36 @@
     <p><em>Unduh aplikasi Teamspeak dan aplikasi lain melalui deskripsi grup WhatsApp.</em></p>
 
     <!-- Pemutar Audio Streaming -->
-   <audio id="dmi-audio" preload="none" crossorigin="anonymous">
-  <source src="https://stream.denger.in/" type="audio/mpeg">
-  Browser Anda tidak mendukung pemutar audio HTML5.
-</audio>
-  <p id="song-title" class="heading fw-semibold page-heading text-white title-dark">Sign of the Times</p>
-  <p id="song-artist" class="text-white-50 para-desc mx-auto mb-0">Harry Styles</p>
+   <section id="music-player">
+  <h2 id="song-title">Judul Lagu: Memuat...</h2>
+  
+  <audio id="player" controls autoplay>
+    <source src="https://stream.denger.in/dmi" type="audio/mpeg">
+    Browser Anda tidak mendukung audio HTML5.
+  </audio>
+</section>
+
+<script>
+  async function updateSongTitle() {
+    try {
+      // Ambil metadata dari Icecast JSON
+      let response = await fetch("https://stream.denger.in/status-json.xsl");
+      let data = await response.json();
+
+      // Icecast biasanya punya struktur seperti ini:
+      // data.icestats.source[0].title
+      let title = data.icestats.source[0].title;
+
+      document.getElementById("song-title").innerText = "Judul Lagu: " + title;
+    } catch (e) {
+      console.error("Gagal ambil metadata", e);
+    }
+  }
+
+  // Update judul tiap 10 detik
+  setInterval(updateSongTitle, 10000);
+  updateSongTitle();
+</script>
     
   </section>
 

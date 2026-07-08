@@ -87,7 +87,7 @@
   <!-- Pemutar Audio Streaming Floating -->
   <div class="audio-floating" id="audioBox">
     <div class="audio-header">
-      <h3 id="song-title">Ngopi FM Live</h3>
+      <h3>Ngopi FM Live</h3>
       <button id="toggleBtn"><i class="fas fa-minus"></i></button>
     </div>
     <div id="audioContainer">
@@ -99,20 +99,6 @@
   </div>
 
   <script>
-    // Update judul lagu otomatis dengan fallback
-    async function updateSongTitle() {
-      try {
-        let response = await fetch("https://stream.denger.in/status-json.xsl");
-        let data = await response.json();
-        let title = data.icestats.source[0].title;
-        document.getElementById("song-title").innerText = "Sedang Diputar: " + title;
-      } catch (e) {
-        document.getElementById("song-title").innerText = "Ngopi FM Live";
-      }
-    }
-    setInterval(updateSongTitle, 10000);
-    updateSongTitle();
-
     // Toggle minimize/maximize
     const toggleBtn = document.getElementById("toggleBtn");
     const audioContainer = document.getElementById("audioContainer");

@@ -34,6 +34,18 @@
       <i class="fab fa-whatsapp"></i> Join Grup WhatsApp
     </a>
     <p><em>Unduh aplikasi Teamspeak dan aplikasi lain melalui deskripsi grup WhatsApp.</em></p>
+
+    <!-- Pemutar Audio Streaming dengan Visualizer -->
+    <div class="audio-player">
+      <h3>Ngopi FM Live</h3>
+      <audio id="player" controls autoplay>
+        <source src="https://stream.denger.in/dmi" type="audio/mpeg">
+        Browser Anda tidak mendukung audio HTML5.
+      </audio>
+      <div class="visualizer">
+        <span></span><span></span><span></span><span></span><span></span>
+      </div>
+    </div>
   </section>
 
   <!-- Section Free Channel -->
@@ -83,35 +95,5 @@
   <footer>
     <p>&copy; 2026 Server Ngopi Indonesia</p>
   </footer>
-
-  <!-- Pemutar Audio Streaming Floating -->
-  <div class="audio-floating" id="audioBox">
-    <div class="audio-header">
-      <h3>Ngopi FM Live</h3>
-      <button id="toggleBtn"><i class="fas fa-minus"></i></button>
-    </div>
-    <div id="audioContainer">
-      <audio id="player" controls autoplay>
-        <source src="https://stream.denger.in/dmi" type="audio/mpeg">
-        Browser Anda tidak mendukung audio HTML5.
-      </audio>
-    </div>
-  </div>
-
-  <script>
-    // Toggle minimize/maximize
-    const toggleBtn = document.getElementById("toggleBtn");
-    const audioContainer = document.getElementById("audioContainer");
-
-    toggleBtn.addEventListener("click", () => {
-      if (audioContainer.style.display === "none") {
-        audioContainer.style.display = "block";
-        toggleBtn.innerHTML = '<i class="fas fa-minus"></i>';
-      } else {
-        audioContainer.style.display = "none";
-        toggleBtn.innerHTML = '<i class="fas fa-plus"></i>';
-      }
-    });
-  </script>
 </body>
 </html>

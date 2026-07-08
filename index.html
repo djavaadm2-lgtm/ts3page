@@ -50,35 +50,69 @@
 
     <!-- Pemutar Audio Streaming -->
    <section id="music-player">
-  <h2 id="song-title">Ngopi Fm</h2>
-  
-  <audio id="player" controls autoplay>
-    <source src="https://stream.denger.in/dmi" type="audio/mpeg">
-    Browser Anda tidak mendukung audio HTML5.
-  </audio>
+  <style>
+    .dmi-radio-box {
+        background: #1e1e1e;
+        color: #ffffff;
+        padding: 20px;
+        border-radius: 12px;
+        max-width: 320px;
+        text-align: center;
+        font-family: Arial, sans-serif;
+        box-shadow: 0 4px 15px rgba(0,0,0,0.3);
+    }
+    .dmi-status {
+        font-size: 11px;
+        text-transform: uppercase;
+        letter-spacing: 1px;
+        color: #bb86fc;
+        margin-bottom: 6px;
+    }
+    .dmi-title {
+        font-size: 15px;
+        font-weight: bold;
+        min-height: 40px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin-bottom: 15px;
+        word-break: break-word;
+    }
+    .dmi-radio-box audio {
+        width: 100%;
+    }
+</style>
+
+<div class="dmi-radio-box">
+    <div class="dmi-status">● Sedang Diputar</div>
+    <div id="dmiSongTitle" class="dmi-title">Memuat judul...</div>
+    <audio controls autoplay>
+        <source src="https://stream.denger.in/dmi" type="audio/mpeg">
+        Browser Anda tidak mendukung player audio.
+    </audio>
+</div>
+
 </section>
 
 <script>
-  async function updateSongTitle() {
-    try {
-      // Ambil metadata dari Icecast JSON
-      let response = await fetch("https://stream.denger.in/status-json.xsl");
-      let data = await response.json();
-
-      // Icecast biasanya punya struktur seperti ini:
-      // data.icestats.source[0].title
-      let title = data.icestats.source[0].title;
-
-      document.getElementById("song-title").innerText = "Judul Lagu: " + title;
-    } catch (e) {
-      console.error("Gagal ambil metadata", e);
+    async function fetchDMITitle() {
+        try {
+            // Memanggil file proxy PHP yang sudah Anda buat
+            const res = await fetch('get_title.php');
+            const data = await res.json();
+            document.getElementById('dmiSongTitle').textContent = data.title || "Live Stream DMI";
+        } catch (e) {
+            document.getElementById('dmiSongTitle').textContent = "Live Stream DMI";
+        }
     }
-  }
 
-  // Update judul tiap 10 detik
-  setInterval(updateSongTitle, 10000);
-  updateSongTitle();
+    // Panggil saat halaman dibuka
+    fetchDMITitle();
+
+    // Perbarui judul otomatis setiap 10 detik
+    setInterval(fetchDMITitle, 10000);
 </script>
+
     
   </section>
 

@@ -49,13 +49,19 @@
     <p><em>Unduh aplikasi Teamspeak dan aplikasi lain melalui deskripsi grup WhatsApp.</em></p>
 
     <!-- Pemutar Audio Streaming -->
-    <div class="radio-card" style="margin-bottom:10px;background:#1a1a1a;padding:10px;border-radius:8px;border:1px solid #333;">
-    <div style="margin-bottom:6px;display:flex;justify-content:space-between;align-items:center;">
-        <span style="font-size:11px;color:#ffcc00;font-weight:bold;">Ngopi FM</span>
-        <a href="https://stream.zeno.fm/jqka2ypekl9uv" target="_blank" style="font-size:9px;color:#888;text-decoration:none;">(Web)</a>
-    </div>
-    <audio controls autoplay muted src="https://stream.zeno.fm/jqka2ypekl9uv" style="width:100%;height:30px;filter:invert(90%);"></audio>
-    </div>
+   <audio id="backsound" loop preload="auto">
+  <source src="https://domain-anda.com/audio-stream.mp3" type="audio/mpeg">
+  Browser Anda tidak mendukung elemen audio.
+</audio>
+
+<button onclick="playAudio()">Mulai Musik</button>
+
+<script>
+  function playAudio() {
+    const audio = document.getElementById("backsound");
+    audio.play();
+  }
+</script>
   </section>
 
   <!-- Section Free Channel -->

@@ -49,19 +49,13 @@
     <p><em>Unduh aplikasi Teamspeak dan aplikasi lain melalui deskripsi grup WhatsApp.</em></p>
 
     <!-- Pemutar Audio Streaming -->
-   <audio id="backsound" loop preload="auto">
-  <source src="https://stream.zeno.fm/jqka2ypekl9uv" type="audio/mpeg">
-  Browser Anda tidak mendukung elemen audio.
+   <audio id="dmi-audio" preload="none" crossorigin="anonymous">
+  <source src="https://stream.denger.in/" type="audio/mpeg">
+  Browser Anda tidak mendukung pemutar audio HTML5.
 </audio>
-
-<button onclick="playAudio()">ngopi FM</button>
-
-<script>
-  function playAudio() {
-    const audio = document.getElementById("backsound");
-    audio.play();
-  }
-</script>
+  <p id="song-title" class="heading fw-semibold page-heading text-white title-dark">Sign of the Times</p>
+  <p id="song-artist" class="text-white-50 para-desc mx-auto mb-0">Harry Styles</p>
+    
   </section>
 
   <!-- Section Free Channel -->
